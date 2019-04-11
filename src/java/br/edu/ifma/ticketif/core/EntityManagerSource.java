@@ -20,5 +20,5 @@ public class EntityManagerSource {
         System.out.println("Banco de Dados: Conectado");
         return emf.createEntityManager();
     }
-    
+
 }
