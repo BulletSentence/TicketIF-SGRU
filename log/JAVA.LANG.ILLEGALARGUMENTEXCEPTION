@@ -1,0 +1,5 @@
+[DATA]: Thu Apr 11 10:26:08 GMT-03:00 2019
+[NOME]: java.lang.IllegalArgumentException
+[ERRO]: java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
+Exception Description: Problem compiling [select u from Usuario u]. 
+[14, 21] The abstract schema type 'Usuario' is unknown.

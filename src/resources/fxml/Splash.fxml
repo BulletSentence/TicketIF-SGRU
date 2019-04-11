@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="600.0" styleClass="bg-splash" stylesheets="@../styles/Splash.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.SplashController">
+   <children>
+      <AnchorPane layoutX="74.0" layoutY="14.0" prefHeight="285.0" prefWidth="469.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="14.0" layoutY="45.0" opacity="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TicketIF" wrappingWidth="248.2421875">
+               <font>
+                  <Font name="Open Sans Semibold" size="33.0" />
+               </font>
+            </Text>
+            <Text layoutX="15.0" layoutY="63.0" opacity="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordenadoria de ">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="8.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bacharelado em Ciencia da Computaçao">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Text>
+            <VBox layoutX="200.0" layoutY="261.0" opacity="1.0" spacing="3.0" />
+            <Label fx:id="lbFechar" layoutX="576.0" layoutY="11.0" text="X">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Text layoutX="8.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IFMA - Campus Caxias">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Text>
+            <Label fx:id="lbInfo" layoutX="41.0" layoutY="208.0" text="Carregando...">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label fx:id="lbErro1" layoutX="15.0" layoutY="209.0" text="Erro ao conectar no Servidor" textFill="#cd0c0c" visible="false">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets right="8.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbErro2" layoutX="25.0" layoutY="237.0" text="Consulte log de eventos." textFill="#b91a1a" visible="false" />
+            <GridPane fx:id="gpLogin" layoutX="16.0" layoutY="95.0" prefHeight="144.0" prefWidth="164.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="144.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="7.0" prefHeight="7.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="tfUsuario" prefHeight="26.0" prefWidth="147.0" styleClass="btn-login" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="tfSenha" prefWidth="148.0" styleClass="btn-login" GridPane.rowIndex="4" />
+                  <Label text="Senha:" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Open Sans Light" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Usuário:">
+                     <font>
+                        <Font name="Open Sans Light" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnEntrar" mnemonicParsing="false" onAction="#btnAcLogin" styleClass="btn-login" text="Entrar" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <Text layoutX="15.0" layoutY="76.0" opacity="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assuntos Estudantis">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <JFXSpinner fx:id="loading" layoutX="65.0" layoutY="132.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

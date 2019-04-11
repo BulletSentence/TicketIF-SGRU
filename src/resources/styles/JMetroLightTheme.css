@@ -1,0 +1,1627 @@
+/*
+ * Copyright (c) 2011-2018 JFXtras
+ *  All rights reserved.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions are met:
+ *      * Redistributions of source code must retain the above copyright
+ *        notice, this list of conditions and the following disclaimer.
+ *      * Redistributions in binary form must reproduce the above copyright
+ *        notice, this list of conditions and the following disclaimer in the
+ *        documentation and/or other materials provided with the distribution.
+ *      * Neither the name of the organization nor the
+ *        names of its contributors may be used to endorse or promote products
+ *        derived from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ *  DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+ *  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ *  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ *  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+
+
+.background{
+    
+    -fx-background-color: #07300A;
+    
+}
+
+.header{
+    -fx-font-size: 3.5em;
+    -fx-font-family: "Open Sans Semilight";
+    -fx-text-fill: black;
+}
+
+.item-title{
+    -fx-font-size: 1em;
+    -fx-font-family: "Open Sans";
+    -fx-text-fill: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Button                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.button-default {
+    -fx-padding: 1 1 1 1;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+
+    -fx-background-radius: 0;
+
+    -fx-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    -fx-font-size: 9pt;
+}
+
+.button-primary {
+
+    -fx-background-color: #cccccc;
+    -fx-text-fill: black;
+}
+
+.button-lg {
+    -fx-padding: 5 22 5 22;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+
+    -fx-background-radius: 0;
+
+    -fx-background-color: #cccccc;
+
+    -fx-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: black;
+}
+
+.button:hover{
+    -fx-background-color: #d8d8d8;
+}
+
+.button:pressed, .button:default:hover:pressed
+{
+  -fx-background-color: black;
+  -fx-text-fill: white;
+}
+
+.button:focused
+{
+    -fx-border-color: transparent, black;
+    -fx-border-width: 1, 1;
+    /*noinspection CssInvalidFunction*/
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled
+{
+    -fx-opacity: 0.4;
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #212121;
+}
+
+.button:default
+{
+    -fx-background-color: #008287;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover{
+    -fx-background-color: #219297;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Toggle Button                                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+.toggle-button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-style: null;
+    -fx-background-radius: 0;
+
+    -fx-background-color: #cccccc;
+
+    -fx-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: black;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+}
+
+.toggle-button:focused {
+    -fx-border-color: transparent, black;
+    -fx-border-width: 1, 1;
+    /*noinspection CssInvalidFunction*/
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #d8d8d8;
+    -fx-text-fill: black;
+}
+
+.toggle-button:selected {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.toggle-button:selected:hover {
+    -fx-background-color: #666;
+    -fx-text-fill: white;
+}
+
+.toggle-button:disabled {
+    -fx-opacity: 0.4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Check Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.check-box {
+    ACCENT_COLOR: #2796c4;
+
+    -fx-text-fill: black;
+}
+
+/* unselected */
+.check-box > .box {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+
+    -fx-border-color: #333333;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+
+    -fx-padding: 2px 0px 2px 0px;
+}
+
+.check-box > .box > .mark {
+    -fx-shape: "M17.939,5.439L7.5,15.889l-5.439-5.449l0.879-0.879L7.5,14.111 l9.561-9.551L17.939,5.439z";
+
+    -fx-pref-width: 16px;
+    -fx-pref-height: 12px;
+
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/* hover */
+.check-box:hover > .box, .check-box:selected:hover > .box  {
+    -fx-border-color: #333333;
+}
+
+/* selected */
+.check-box:selected > .box{
+    -fx-background-color: ACCENT_COLOR;
+    -fx-border-color: ACCENT_COLOR;
+}
+
+.check-box:selected > .box > .mark{
+    -fx-background-color: white;
+}
+
+/* pressed */
+.check-box:pressed > .box, .check-box:selected:pressed > .box
+{
+    -fx-background-color: #666666;
+    -fx-border-color: #666666;
+}
+
+/* indeterminate */
+.check-box:indeterminate > .box {
+    -fx-padding: 3px;
+
+    -fx-border-color: ACCENT_COLOR;
+}
+
+.check-box:indeterminate > .box > .mark {
+    -fx-shape: null;
+
+    -fx-pref-width: 10px;
+    -fx-max-width: 10px;
+    -fx-min-width: 10px;
+    -fx-pref-height: 10px;
+    -fx-max-height: 10px;
+    -fx-min-height: 10px;
+
+    -fx-background-color: #333333;
+    /*-fx-background-insets: 3px;*/
+}
+
+/* -- indeterminate - pressed */
+.check-box:indeterminate:pressed > .box > .mark {
+    -fx-background-color: #666666;
+}
+
+.check-box:indeterminate:pressed > .box {
+    -fx-background-color: white;
+    -fx-border-color: #666666;
+}
+
+/* focused */
+
+.check-box:focused > .box{
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    /* - first border is focus ring
+       - second border is control border */
+    -fx-border-color: black, #333333;
+    -fx-border-width: 1, 2;
+    /*noinspection CssInvalidFunction*/
+    -fx-border-style: segments(1, 2), solid;
+    -fx-border-insets: -3, 0;
+}
+
+/* -- focused - selected */
+.check-box:focused:selected > .box{
+    -fx-border-color: black, ACCENT_COLOR;
+}
+
+/* -- focused - selected, hover */
+.check-box:focused:selected:hover > .box{
+    -fx-border-color: black, #333333;
+}
+
+/* -- focused - pressed */
+.check-box:focused:pressed > .box{
+    -fx-border-color: black, #666666;
+}
+
+.check-box:focused:selected:pressed > .box{
+    -fx-border-color: black, #666666;
+}
+
+.check-box:focused:indeterminate:pressed > .box{
+    -fx-border-color: black, #666666;
+}
+
+/* -- focused - indeterminate*/
+.check-box:focused:indeterminate > .box {
+    -fx-border-color: black, ACCENT_COLOR;
+}
+
+/* disabled */
+.check-box:disabled
+{
+    -fx-opacity: 0.4;
+}
+
+.check-box:disabled > .box
+{
+    -fx-background-color: #cdcdcd;
+    -fx-border-color: #aaa;
+}
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Radio Button                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.radio-button {
+    ACCENT_COLOR: #2796c4;
+
+    -fx-text-fill: #212121;
+}
+
+.radio-button > .radio  {
+    -fx-background-color: white;
+    -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+    -fx-background-insets: 0;
+
+    /* Two borders exist because of the focus ring, if they didn't the size of the control would change on focus
+       - The first one is the border of the control
+       - The second one is the border of the focus ring
+       */
+    /*noinspection CssInvalidFunction*/
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 1.0em, 0;
+    -fx-border-color: #333333, transparent;
+    -fx-border-insets: 0px, -2px;
+    -fx-border-width: 2px, 1px;
+
+    -fx-padding: 3px; /* 4 -- padding from outside edge to the inner black dot */
+}
+
+.radio-button > .radio > .dot {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+
+    -fx-padding: 5px; /* 3 -- radius of the inner black dot when selected */
+}
+
+/* hover */
+.radio-button:hover > .radio {
+    -fx-background-color: white;
+    -fx-border-color: #333333, transparent;
+}
+
+.radio-button:selected:hover > .radio > .dot {
+    -fx-background-color: #111;
+}
+
+/* selected */
+.radio-button:selected > .radio {
+    -fx-border-color: ACCENT_COLOR, transparent;
+}
+
+.radio-button:selected > .radio > .dot {
+    -fx-background-color: #333333;
+}
+
+/* pressed */
+.radio-button:pressed > .radio
+{
+    -fx-background-color: white;
+    -fx-border-color: #999999, transparent;
+}
+
+.radio-button:pressed:selected > .radio > .dot
+{
+    -fx-background-color: #999999;
+}
+
+/* focused */
+.radio-button:focused > .radio
+{
+    /*noinspection CssInvalidFunction*/
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 1.0em, 0;
+    -fx-border-color: #333333, #333333;
+    -fx-border-insets: 0px, -2px;
+    -fx-border-width: 2px, 1px;
+}
+
+.radio-button:focused:hover > .radio
+{
+    -fx-border-color: white, #e0e0e0;
+}
+
+.radio-button:focused:pressed > .radio, .radio-button:focused:selected:pressed > .radio
+{
+    -fx-border-color: #999999, #333333;
+    -fx-background-color: white;
+}
+
+.radio-button:focused:selected > .radio {
+    -fx-border-color: ACCENT_COLOR, #333333;
+}
+
+/* disabled */
+.radio-button:disabled
+{
+    -fx-opacity: 0.4;
+}
+
+.radio-button:disabled > .radio
+{
+    -fx-border-color: #333333, transparent;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tooltip                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.tooltip {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 0 0 0;
+
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;  /*4 8 4 8 */
+
+    -fx-font-family: "Open Sans Semilight", "Open Sans Light", "Open Sans", Helvetica, Arial, sans-serif;
+    -fx-text-fill: rgba(0, 0, 0, 0.6);
+
+    -fx-border-color: #808080;
+    -fx-border-width: 2px;
+
+    -fx-effect: null;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Bar and Scroll Pane                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-bar {
+    THUMB: #c2c7ca;
+    THUMB_HOVER: #838689;
+    THUMB_PRESSED: #585a5c;
+
+    TRACK: #e9e9e9;
+
+    INC_DEC_BUTTON: #e8e6e3;
+    INC_DEC_BUTTON_HOVER: #c6cacf;
+    INC_DEC_BUTTON_PRESSED: #585a5c;
+
+    ARROW: #5a5a59;
+    ARROW_PRESSED: white;
+}
+
+.scroll-bar > .thumb{
+    -fx-background-color: THUMB;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar > .thumb:hover {
+    -fx-background-color: THUMB_HOVER;
+}
+
+.scroll-bar > .thumb:pressed {
+    -fx-background-color: THUMB_PRESSED;
+}
+
+.scroll-bar > .track {
+    -fx-background-color: TRACK;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar > .track-background {
+    -fx-background-insets: 0;
+}
+
+/* Buttons */
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-background-color: INC_DEC_BUTTON;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 0.5em 0.25em 0.5em 0.25em; /* 6 3 6 3*/
+}
+
+.scroll-bar:horizontal > .increment-button,
+.scroll-bar:horizontal > .decrement-button {
+    -fx-padding: 0.25em 0.5em 0.25em 0.5em ; /* 3 6 3 6*/
+}
+
+.scroll-bar > .increment-button:hover,
+.scroll-bar > .decrement-button:hover  {
+    -fx-background-color: INC_DEC_BUTTON_HOVER;
+}
+
+.scroll-bar > .increment-button:pressed,
+.scroll-bar > .decrement-button:pressed {
+    -fx-background-color: INC_DEC_BUTTON_PRESSED;
+}
+
+.scroll-bar > .decrement-button > .decrement-arrow,
+.scroll-bar > .increment-button > .increment-arrow{
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-background-color: transparent, #606060;
+    -fx-effect: null;
+}
+
+/* Disabled */
+.scroll-bar:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* ARROW SHAPES */
+.scroll-bar:horizontal > .increment-button > .increment-arrow {
+    -fx-shape: "M14.4,18.611l3.633-3.637L14.4,11.338l0.352-0.352l3.992,3.988 l-3.992,3.988L14.4,18.611z";
+}
+
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-shape: "M18.393,18.963L14.4,14.975l3.992-3.988l0.352,0.352l-3.633,3.637 l3.633,3.637L18.393,18.963z";
+}
+
+.scroll-bar:vertical > .increment-button > .increment-arrow {
+    -fx-shape: "M20.561,13.154l-3.988,3.992l-3.988-3.992l0.352-0.352 l3.637,3.633l3.637-3.633L20.561,13.154z";
+}
+
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-shape: "M20.209,17.146l-3.637-3.633l-3.637,3.633l-0.352-0.352 l3.988-3.992l3.988,3.992L20.209,17.146z";
+}
+
+.scroll-bar > .decrement-button:pressed > .decrement-arrow,
+.scroll-bar > .increment-button:pressed > .increment-arrow {
+    -fx-background-color: transparent, white;
+    -fx-effect: null;
+}
+
+.scroll-bar:vertical > .increment-button > .increment-arrow,
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-padding: 2.5px 4px 2.5px 4px;
+}
+
+.scroll-bar:horizontal > .increment-button > .increment-arrow,
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-padding: 4px 2.5px 4px 2.5px;
+    -fx-translate-y: -1; /* HACK:  Somehow the arrow is not centered so we add this to center it */
+}
+
+.scroll-bar > .increment-button > .increment-arrow, .scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-background-color: ARROW;
+}
+
+.scroll-bar > .increment-button:pressed > .increment-arrow, .scroll-bar > .decrement-button:pressed > .decrement-arrow {
+    -fx-background-color: ARROW_PRESSED;
+}
+
+/**************************** Scroll Pane *************************************/
+
+.scroll-pane {
+    BACKGROUND: #e9e9e9;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent, transparent;
+}
+
+.scroll-pane .corner {
+    -fx-background-radius: 0 0 0 0;
+    -fx-background-color: BACKGROUND;
+    -fx-background-insets: 0 0 0 0;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Combo Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.combo-box-base {
+     BORDER_COLOR: #999999;
+     BORDER_COLOR_HOVER: #666666;
+     BORDER_COLOR_FOCUSED: #5c5c5c;
+     BORDER_COLOR_PRESSED: BORDER_COLOR;
+
+     BACKGROUND_PRESSED: #cccccc;
+
+     LIST_CELL_BACKGROUND: #f2f2f2;
+     LIST_CELL_HOVER_BACKGROUND: #e0e0e0;
+
+     LIST_CELL_BORDER: #cccccc;
+
+     ACCENT_COLOR: #a6d8ff;
+ }
+
+.combo-box-base  {
+    -fx-background-color: transparent, BORDER_COLOR, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0.166667em 0.166667em 0.166667em 0.166667em; /* 2 2px 2 2px*/
+
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 1.333333em; /* 16 */
+}
+
+.combo-box-base:hover {
+    -fx-background-color: transparent, BORDER_COLOR_HOVER, transparent, white;
+}
+
+.combo-box-base:focused {
+    -fx-background-color: transparent, BORDER_COLOR_FOCUSED, transparent, white;
+    -fx-background-insets: -1.4, 0, 1, 2;
+
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.combo-box-base:focused:hover {
+    -fx-background-color: transparent, #909090, transparent, white;
+}
+
+.combo-box-base:pressed, .combo-box-base:focused:pressed {
+    -fx-background-color: transparent, BORDER_COLOR_PRESSED, transparent, BACKGROUND_PRESSED;
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
+
+/* OPEN BUTTON */
+.combo-box-base > .arrow-button {
+    -fx-background-color: transparent, transparent, transparent;
+}
+
+/* ARROW */
+.combo-box-base > .arrow-button > .arrow {
+    -fx-padding: 3.5px 6px 3.5px 6px;
+    -fx-shape: "M21.361,12.736l0.527,0.527L16,19.152l-5.889-5.889l0.527-0.527L16,18.098L21.361,12.736z";
+    -fx-background-insets: 0 0 0 0, 0;
+    -fx-background-color: black;
+}
+
+/* LIST (Popup)*/
+.combo-box-popup > .list-view {
+    -fx-effect: null;
+
+    -fx-border-color: LIST_CELL_BORDER;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 11pt;
+    -fx-padding: 4 0 4 5;
+
+    -fx-background-color: LIST_CELL_BACKGROUND;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover{
+    -fx-background-color: #dedede;
+    -fx-text-fill: #111;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected{
+    -fx-background-color: ACCENT_COLOR;
+    -fx-text-fill: #111;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Rating (ControlsFX)                                                         *
+ *                                                                             *
+ ******************************************************************************/
+
+.rating > .container > .button {
+    -fx-background-color: #bababa;
+    -fx-border-color: transparent;
+    -fx-shape: "M147.421,249.541l6.152,4.854l-2.393,7.355l6.521-4.361l6.549,4.361l-2.393-7.355l6.152-4.854h-7.738l-2.571-7.396l-2.543,7.396H147.421z";
+    -fx-background-image: null;
+    -fx-padding: 16 16;
+    -fx-background-image-repeat: no-repeat;
+}
+.rating > .container > .button.strong {
+    -fx-background-color: #00828b;
+    -fx-border-color: transparent;
+    -fx-background-image: null;
+
+}
+.rating > .container:hover > .button.strong {
+    -fx-background-color: #329aa3;
+}
+
+.rating > .container > .button:hover {
+    -fx-effect: null;
+}
+
+.rating > .container:pressed > .button.strong {
+    -fx-background-color: #25bbc4;
+}
+
+.rating > .container > .button:pressed {
+    -fx-background-color: #25bbc4;
+}
+
+.rating:disabled{
+    -fx-opacity: .6;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Text Field (and Password Field)                                             *
+ *                                                                             *
+ ******************************************************************************/
+.text-field{
+    -fx-skin: "impl.jfxtras.styles.jmetro8.MetroTextFieldSkin";
+}
+
+.text-input{
+    -fx-background-radius: 0, 0;
+
+    -fx-background-color: #bababa, white;
+    -fx-background-insets: 0, 2;
+
+    -fx-prompt-text-fill: #9f9f9f;
+
+    -fx-highlight-fill: #008287; /* TODO: this probably is the "active" color" */
+    -fx-highlight-text-fill: white;
+}
+
+.text-input:hover{
+    -fx-background-color: #8f8f8f, white;
+}
+
+.text-input:focused{
+    -fx-background-color: #5c5c5c, white;
+
+    -fx-text-fill: black;
+}
+
+/*.text-input > Pane{*/
+    /*-fx-padding: 0.333333em 0.583em 0.333333em 0em; *//* 4 7 4 0 */
+/*}*/
+
+.text-input > .right-button{
+    -fx-cursor: default;
+
+    -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
+}
+
+.text-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M221.738,305.873l6.135,6.16l-2.875,2.863l-6.135-6.159l-6.263,6.237l-2.864-2.875l6.263-6.238l-6.177-6.202l2.875-2.863l6.177,6.201l6.244-6.22l2.864,2.876L221.738,305.873z";
+
+    -fx-padding: 0.5em 0.5em; /* TODO: put the real number here 18 18 */
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:hover {
+    -fx-background-color: #d9d9d9;
+}
+
+.text-input > .right-button:pressed {
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:pressed > .right-button-graphic {
+    -fx-background-color: white;
+}
+
+.text-input:disabled
+{
+    -fx-opacity: 1;
+    -fx-background-color: #d9d9d9, #eaeaea;
+    -fx-text-fill: #adadad;
+}
+
+.item-title.disabled{
+    -fx-text-fill: #adadad;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Password Field                                                              *
+ *                                                                             *
+ ******************************************************************************/
+
+.password-field {
+    -fx-skin: "impl.jfxtras.styles.jmetro8.MetroPasswordFieldSkin";
+}
+
+.password-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M307.688,399.564c0,1.484-1.203,2.688-2.688,2.688c-1.484,0-2.688-1.203-2.688-2.688s1.203-2.688,2.688-2.688C306.484,396.876,307.688,398.08,307.688,399.564z M297.5,399h2.5c0,0,1.063-4,5-4c3.688,0,5,4,5,4h2.5c0,0-2.063-6.5-7.5-6.5C299,392.5,297.5,399,297.5,399z";
+    -fx-scale-shape: false;
+    -fx-background-color: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Progress Bar                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.progress-bar > .bar {
+    -fx-background-color: #008287;
+    -fx-background-radius: 0;
+    -fx-background-insets: 1;
+}
+
+.progress-bar > .track {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Slider                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.slider {
+    -fx-skin: "impl.jfxtras.styles.jmetro8.FilledSliderSkin";
+}
+
+.slider .thumb {
+    -fx-background-color: black;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0em;
+    -fx-padding: 0.333333em; /* 4 */
+
+    -fx-effect: null;
+}
+.slider:focused .thumb {
+    -fx-background-radius: 0em;
+}
+
+.slider .track {
+    -fx-background-color: #c6c6c6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.333333em; /* This value must be equal to ".slider .thumb" padding */
+}
+
+.slider .fill {
+    -fx-background-color: #00828b;
+    -fx-padding: 0.333333em; /* This value must be equal to ".slider .thumb" padding */
+}
+
+.slider .fill:hover {
+    -fx-background-color: #219297;
+}
+
+.slider .fill:pressed {
+    -fx-background-color: #25bbc4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Toggle Switch (ControlsFX)                                                  *
+ *                                                                             *
+ ******************************************************************************/
+.toggle-switch {
+    -fx-skin: "impl.jfxtras.styles.jmetro8.MetroToggleSwitchSkin";
+}
+
+.toggle-switch {
+    ACCENT_COLOR: #0078d7;
+
+    /* Unselected */
+    UNSELECTED: white;
+    UNSELECTED_BORDER: #111;
+    THUMB_UNSELECTED: #111;
+    /* --    hover */
+    UNSELECTED_HOVER: UNSELECTED;
+    UNSELECTED_BORDER_HOVER: #111;
+    THUMB_UNSELECTED_HOVER: THUMB_UNSELECTED;
+
+    /* Selected */
+    SELECTED: ACCENT_COLOR;
+    SELECTED_BORDER: ACCENT_COLOR;
+    THUMB_SELECTED: white;
+    /* --    hover */
+    SELECTED_HOVER: derive(ACCENT_COLOR, 40%);
+
+    /* Pressed */
+    PRESSED: #666666;
+    PRESSED_BORDER: PRESSED;
+    THUMB_PRESSED: white;
+
+
+    -thumb-move-animation-time: 100;
+    -toggle-display: left;
+}
+
+.toggle-switch .text {
+    -fx-fill: #111;
+    -fx-font-size: 1em;
+    -fx-font-family: "Open Sans";
+}
+
+.toggle-switch .thumb {
+    -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+    -fx-padding: 5px;
+}
+
+.toggle-switch .thumb-area{
+    -fx-background-radius: 10px;
+
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+
+    -fx-pref-width: 44px;
+    -fx-pref-height: 20px;
+    -fx-padding: 5px 5px 5px 5px;
+}
+
+/* unselected */
+.toggle-switch .thumb-area{
+    -fx-background-insets: 0;
+    -fx-background-color: UNSELECTED;
+
+    -fx-border-color: UNSELECTED_BORDER;
+}
+
+.toggle-switch .thumb {
+    -fx-background-color: THUMB_UNSELECTED;
+}
+
+/* unselected - hover */
+.toggle-switch:hover .thumb-area {
+    -fx-background-color: UNSELECTED_HOVER;
+
+    -fx-border-color: UNSELECTED_BORDER_HOVER;
+}
+
+.toggle-switch:hover .thumb {
+    -fx-background-color: THUMB_UNSELECTED_HOVER;
+}
+
+/* selected */
+.toggle-switch:selected .thumb-area{
+    -fx-background-insets: 0;
+    -fx-background-color: SELECTED;
+
+    -fx-border-color: SELECTED_BORDER;
+}
+
+.toggle-switch:selected .thumb{
+    -fx-background-color: THUMB_SELECTED;
+}
+
+/* selected - hover */
+.toggle-switch:selected:hover .thumb-area {
+    -fx-background-color: SELECTED_HOVER;
+    -fx-border-color: SELECTED_HOVER;
+}
+
+/* pressed */
+.toggle-switch:pressed .thumb-area, .toggle-switch:selected:pressed .thumb-area{
+    -fx-background-insets: 0;
+
+    -fx-background-color: PRESSED;
+    -fx-border-color: PRESSED_BORDER;
+}
+
+.toggle-switch:pressed .thumb {
+    -fx-background-color: THUMB_PRESSED;
+}
+
+/* disabled */
+.toggle-switch:disabled
+{
+    -fx-opacity: 0.4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * List Spinner (Jfxtras)                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.ListSpinner {
+    -fx-skin: "impl.jfxtras.labs.internal.scene.control.skin.ListSpinnerCaspianSkin";
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.266667em 0.233333em 0.25em 0.233333em;
+    -fx-text-fill: #212121;
+}
+
+.ListSpinner:hover {
+    -fx-color: #f0f0f0;
+}
+
+.ListSpinner:focused {
+    -fx-color: -fx-focused-base;
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: -1.4, 0, 1, 2;
+    -fx-background-radius: 6.4, 5, 4, 3;
+}
+
+.ListSpinner .valuePane {
+    -fx-padding: 0.0em 0.2em 0.0em 0.2em;
+}
+
+.ListSpinner .left-arrow {
+    -fx-shape: "M4,-4 L0,0 L4,4 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .right-arrow {
+    -fx-shape: "M0,-4 L4,0 L0,4 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .down-arrow {
+    -fx-shape: "M-4,-2 L0,2 L4,-2 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .up-arrow {
+    -fx-shape: "M4,2 L-4,2 L0,-2 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .idle {
+    -fx-background-color: -fx-mark-color;
+}
+.ListSpinner .clicked {
+    -fx-background-color: -fx-focus-color;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Spinner                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.spinner {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.spinner > .text-field{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TextFieldSkin";
+}
+
+.spinner > .text-field {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button  {
+    -fx-background-color: #f0f0f0;
+    /*Change the two 0's here to -1 to get rid of the horizontal line */
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.spinner .increment-arrow-button .increment-arrow, .spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: -fx-mark-color;
+}
+
+
+.spinner .increment-arrow-button:hover, .spinner .decrement-arrow-button:hover {
+    -fx-background-color: #dadada;
+}
+
+.spinner .increment-arrow-button:pressed, .spinner .decrement-arrow-button:pressed {
+    -fx-background-color: #606060;
+}
+
+.spinner.split-arrows-horizontal .increment-arrow-button:pressed .increment-arrow, .spinner.split-arrows-horizontal .decrement-arrow-button:pressed .decrement-arrow{
+    -fx-background-color: white;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Date Picker                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+.date-picker > .arrow-button > .arrow {
+    -fx-shape: "M0,0v9h9V0H0z M2,8H1V7h1V8z M2,6H1V5h1V6z M2,4H1V3h1V4z M4,8H3V7h1V8z M4,6H3V5h1V6z M4,4H3V3h1V4z M6,8H5V7h1V8z M6,6H5 V5h1V6z M6,4H5V3h1V4z M8,8H7V7h1V8z M8,6H7V5h1V6z M8,4H7V3h1V4z";
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.416667em 0.416667em 0.333333em 0.333333em; /* 5 5 4 4 */
+    -fx-scale-shape: true;
+}
+
+.date-picker .text-field{
+    -fx-skin: "com.sun.javafx.scene.control.skin.TextFieldSkin";
+}
+
+.date-picker .text-input{
+    -fx-background-radius: 0, 0;
+
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 2, 2;
+}
+
+.date-picker > .arrow-button:hover {
+    -fx-background-color: #d9d9d9;
+    -fx-background-insets: 3 3 3 3;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button:pressed {
+    -fx-background-color: black;
+}
+
+.date-picker > .arrow-button:pressed > .arrow {
+    -fx-background-color: white;
+}
+
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-padding: 0.25em 0.583333em 0.25em 0.583333em; /* 3 7 3 7 */
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner > .button:hover {
+    -fx-background-color: #dadada;
+}
+
+.date-picker-popup > * > .spinner > .button:armed {
+    -fx-background-color: #606060;
+}
+
+.date-picker-popup > * > .spinner > .button > .left-arrow,
+.date-picker-popup > * > .spinner > .button > .right-arrow {
+    -fx-background-color: #606060;
+    -fx-background-insets: 0;
+    -fx-effect: null;
+}
+
+.date-picker-popup > * > .spinner > .button:pressed > .left-arrow,
+.date-picker-popup > * > .spinner > .button:pressed > .right-arrow {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: white;
+    /*-fx-background-insets: 1 0 0 0;*/
+    -fx-padding: 0;
+}
+
+.date-picker-popup > * > .previous-month,
+.date-picker-popup > * > .next-month {
+    -fx-background-color: white;
+    -fx-opacity: 0.3;
+}
+
+.date-picker-popup > * > .day-name-cell,
+.date-picker-popup > * > .week-number-cell {
+    -fx-font-size: 0.75em;
+    -fx-font-family: "Open Sans Semibold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Choice Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.choice-box  {
+    -fx-background-color: transparent, #cccccc, transparent, #cccccc;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-background-insets: -1.4, 0, 1, 2;
+
+    -fx-padding: 0em 0.166667em 0em 0.166667em; /* 0 2px 0 2px*/
+
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 1.166667em; /* 14 */
+}
+
+.choice-box:hover {
+    -fx-background-color: transparent, #7a7a7a, transparent, #cccccc;
+}
+
+.choice-box:focused {
+    -fx-background-color: transparent, #7a7a7a, transparent, #cccccc;
+}
+
+.choice-box:focused:hover {
+    -fx-background-color: transparent, #7a7a7a, transparent, #cccccc;
+}
+
+.choice-box:disabled {
+    -fx-opacity: .4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * List View                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.list-view {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+
+    -fx-border-color: #a4a4a4;
+    -fx-border-width: 2px;
+}
+
+.list-view:focused {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 1em 2em 1em 2em;
+    -fx-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-background-color: white;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background-color: #d3d3d3;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-background-color: white;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background-color: -fx-background;
+    -fx-background-insets: 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Table View                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.table-view{
+    /* This is a var */
+    TABLE_VIEW_BORDER_COLOR: #f4f4f4;
+    LIGHT_ACCENT_COLOR: #d5e1f2;
+    ACCENT_COLOR: #1550bd;
+
+    -fx-cell-focus-inner-border: LIGHT_ACCENT_COLOR; /* focused */
+
+    -fx-background-color: transparent, transparent;
+
+    -fx-padding: 0;
+}
+
+/****** Column Header ******/
+
+.table-view .column-header-background {
+    -fx-background-color: white;
+}
+
+.table-view .column-header, .table-view .filler{
+    /* borders around table header */
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent TABLE_VIEW_BORDER_COLOR transparent;
+}
+
+.table-view .filler {
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0 0 0 0, 1 0 1 0;
+}
+
+.table-view .column-header:last-visible {
+    -fx-border-color: transparent transparent TABLE_VIEW_BORDER_COLOR transparent;
+}
+
+.table-view .filler {
+    -fx-border-color: transparent transparent TABLE_VIEW_BORDER_COLOR transparent;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: #111;
+    -fx-font-family: "Open Sans SemiBold";
+    -fx-font-size: 1.166667em;  /* 14 */
+    -fx-alignment: center-left;
+
+    -fx-padding: 0.666666em 2em 0.666666em 2em;
+}
+
+.table-view .column-header:hover{
+    -fx-background-color: LIGHT_ACCENT_COLOR;
+}
+
+.table-view .column-header.table-column-selected {
+    -fx-background: white;
+    -fx-border-color: #034f95 #034f95 transparent #034f95;
+    -fx-border-width: 2px;
+}
+
+/****** Table View "body"  ******/
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.table-cell {
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 1.166667em;  /* 14 */
+    -fx-alignment: center-left;
+    -fx-padding: 0.833333em 2em 0.5em 2em;
+}
+
+.table-cell:last-visible {
+    -fx-border-color: transparent transparent transparent transparent;
+}
+
+.table-cell:filled:hover {
+    -fx-background-color: LIGHT_ACCENT_COLOR;
+}
+
+/* Selected cell */
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected .text{
+    -fx-fill: #111;
+}
+
+/* - when focused and selected */
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected{
+    -fx-background: ACCENT_COLOR;
+    -fx-border-color: #034f95;
+}
+
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected .text{
+    -fx-fill: white;
+}
+
+/* When hover */
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:hover .text,
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:hover:selected .text{
+    -fx-fill: #111;
+}
+
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected:hover{
+    -fx-background-color: LIGHT_ACCENT_COLOR;
+}
+
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell.table-column-selected{
+    -fx-background: white;
+    -fx-border-color: transparent transparent TABLE_VIEW_BORDER_COLOR transparent, transparent #034f95 transparent #034f95;
+    -fx-border-width: 1px 2px 1px 2px, 1px 2px 1px 2px;
+}
+
+/* - focused */
+.table-view .table-cell:focused {
+    -fx-background-color: -fx-background, LIGHT_ACCENT_COLOR, -fx-background;
+}
+
+/* Header Sort Arrows */
+.table-view /*> column-header-background > nested-column-header >*/ .arrow {
+    -fx-padding: 0.5em 0.3125em 0.5em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M26.488,211.891h17.656V53H81L35.316,0L-13,53h39.488V211.891z";
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tree View                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.tree-view {
+    HOVER_COLOR: #ccc;
+    PRESSED_COLOR: derive(HOVER_COLOR, -30%);
+    ACCENT_COLOR: #1550bd;
+
+    -fx-background-color: white;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+}
+
+.tree-view .tree-cell {
+    -fx-font-size: 1.166667em; /* 14 */
+    -fx-padding: 1em;
+}
+
+/********** Label **********/
+.tree-view .tree-cell .label{
+    -fx-font-family: "Open Sans";
+
+    -fx-padding: 0 3px 0 0;
+}
+
+/* Hover */
+.tree-view .tree-cell:filled:hover {
+    -fx-background-color: HOVER_COLOR;
+}
+
+/* Selected */
+.tree-view .tree-cell:filled:selected {
+    -fx-background-color: ACCENT_COLOR;
+    -fx-table-cell-border-color: transparent;
+}
+
+/* Selected hover */
+.tree-view .tree-cell:filled:selected:hover, .tree-view .tree-cell:selected:hover {
+    -fx-background-color: derive(ACCENT_COLOR, -30%);
+}
+
+/* Pressed */
+.tree-view .tree-cell:filled:pressed, .tree-view .tree-cell:filled:selected:pressed, .tree-view .tree-cell:selected:pressed, .tree-view .tree-cell:pressed{
+    -fx-background-color: PRESSED_COLOR;
+}
+
+/*********** Expand/Collapse icon **********/
+.tree-cell > .tree-disclosure-node {
+    -fx-padding: 0.333333em 1em 0.333333em 1em;
+}
+
+.tree-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: -fx-text-background-color;
+    -fx-padding: 0.416667em 0.333333em 0.416667em 0.333333em;
+    -fx-shape: "M8.06,20.938L7,20l8-8L7,4l1.06-0.938L16.917,12L8.06,20.938z";
+}
+
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-scale-y: -1;
+    -fx-rotate: 90;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tab Pane and Tabs                                                           *
+ *                                                                             *
+ ******************************************************************************/
+
+.tab-pane {
+    ACCENT_COLOR: #022110;
+    BACKGROUND_PRIMARY_COLOR: #07300A;
+
+    -fx-tab-min-height: 2.91666375em; /* 34 */
+    -fx-tab-max-height: 2.91666375em; /* 34 */
+    -fx-border-width: 0em;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-padding: 0 0.166667em 0em 0.416667em; /* 0 2 5 5 */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: transparent, transparent,  #07300A;
+    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+    -fx-padding: 0em 1.5em 0em 1.5em; /* 1 18 0.99 18 */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: transparent, #E8E8E8;
+    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-text-fill: white;
+    -fx-font-size: 1.333333em; /* 16 */
+    -fx-font-family: "Open Sans";
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {
+    -fx-text-fill: ACCENT_COLOR;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:hover > .tab-container > .tab-label {
+    -fx-text-fill: #9E9E9D;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color:
+            -fx-outer-border,
+            transparent,
+             #07300A;
+    -fx-background-insets: 0 0 0 0, 0 0 0 0, 0;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 0, 0;
+    -fx-border-color: transparent, transparent;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Context Menu, Menus, MenuBar and MenuItem                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+/****************************** Context Menu **********************************/
+
+.context-menu {
+    -fx-background-color: #f2f2f2;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+    -fx-padding: 0.5em 0em 0.5em 0em; /* 6 0 6 0 */
+
+    -fx-border-color: #cccccc;
+    -fx-border-style: solid;
+}
+
+/********************************* Menu Bar ************************************/
+
+.menu-bar {
+    -fx-background-color: white;
+    -fx-background-insets: 0 0 0 0;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 1.166667em; /* 14 */
+}
+
+.menu-bar > .container > .menu-button {
+    -fx-padding: 0.5em 0.666667em 0.5em 0.666667em; /* 6 8 6 8 */
+}
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: #dadada;
+}
+
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing  > .label {
+    -fx-text-fill: #393939;
+}
+
+/********************************* Menu Item ***********************************/
+
+.menu-item {
+    -fx-text-fill: #393939;
+    -fx-background-color: transparent;
+    -fx-padding: 0.583333em 1em 0.583333em 1em;   /*7 12 7 12 */
+}
+
+.menu-item .label {
+    -fx-padding: 0em 1.333332em 0em 0em;
+    -fx-text-fill: #212121;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 1.166667em; /* 14 */
+}
+
+.menu-item > .graphic-container {
+    -fx-padding: 0em 0.75em 0em 0em;
+}
+
+.radio-menu-item:checked > .left-container > .radio {
+    -fx-shape: "M17.939,5.439L7.5,15.889l-5.439-5.449l0.879-0.879L7.5,14.111 l9.561-9.551L17.939,5.439z";
+
+    -fx-padding: 5px 7px 5px 7px;
+    -fx-scale-shape: true;
+}
+
+.check-menu-item:checked > .left-container > .check {
+    -fx-shape: "M17.939,5.439L7.5,15.889l-5.439-5.449l0.879-0.879L7.5,14.111 l9.561-9.551L17.939,5.439z";
+
+    -fx-padding: 5px 7px 5px 7px;
+    -fx-scale-shape: true;
+}
+
+.check-menu-item:checked > .left-container {
+    -fx-padding: 0em 1em 0em 0.5em;
+}
+
+.radio-menu-item:checked > .left-container {
+    -fx-padding: 0em 1em 0em 0.5em;
+}
+
+.menu > .right-container > .arrow {
+    -fx-padding: 0.458em 0.333333em 0.458em 0.333333em; /* >5 4 >5 4 */
+    -fx-shape: "M8.06,20.938L7,20l8-8L7,4l1.06-0.938L16.917,12L8.06,20.938z";
+    -fx-scale-shape: true;
+}
+
+.radio-menu-item:checked > .left-container > .radio, .check-menu-item:checked > .left-container > .check, .menu > .right-container > .arrow {
+    -fx-background-color: #0a0a0a;
+}
+
+/* hover */
+.menu-item:hover, .menu-item:focused {
+    -fx-background-color: #dadada;
+}
+
+/* pressed */
+.menu-item:pressed {
+    -fx-background-color: #c2c2c2;
+}
+
+/* separator */
+.context-menu .separator {
+    -fx-padding: 0.58333275em 1em 0.58333275em 1em;  /*7 12 7 12 */
+}
+
+.context-menu .separator:horizontal .line {
+    -fx-border-color: #c3c3c3 transparent transparent transparent;
+    -fx-border-insets: 0;
+}
+
+
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="telaHome" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="935.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="br.edu.ifma.ticketif.controller.HomeController">
+   <top>
+       <HBox style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+             <Label alignment="CENTER" prefHeight="56.0" prefWidth="176.0" style="-fx-background-color: #263238;"
+                    text="TicketIF" textFill="WHITE">
+                 <font>
+                     <Font name="Arial Bold" size="27.0"/>
+                 </font>
+             </Label>
+             <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="493.0" style="-fx-background-color: #263238;"
+                   HBox.hgrow="ALWAYS">
+               <children>
+                   <Label text=" Leonardo Viana Oliveira" textFill="WHITE">
+                       <graphic>
+                           <Circle fill="#31c364" radius="4.0" stroke="#31c364" strokeType="INSIDE"/>
+                       </graphic>
+                       <HBox.margin>
+                           <Insets right="3.0"/>
+                       </HBox.margin>
+                     <font>
+                         <Font name="Arial" size="12.0"/>
+                     </font>
+                  </Label>
+                   <JFXButton prefHeight="25.0" prefWidth="45.0"
+                              style="-fx-background-color: #212121; -fx-background-radius: 10;" text="Sair"
+                              textFill="WHITE">
+                       <HBox.margin>
+                           <Insets left="10.0" right="20.0"/>
+                       </HBox.margin>
+                   </JFXButton>
+               </children>
+            </HBox>
+         </children>
+       </HBox>
+   </top>
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <VBox fx:id="drawer" alignment="TOP_CENTER" prefHeight="544.0" prefWidth="176.0"
+                      style="-fx-background-color: #212121;" VBox.vgrow="ALWAYS">
+                    <children>
+                        <JFXButton onAction="#btnCadastrar" prefHeight="70.0" prefWidth="185.0"
+                                   style="-fx-background-color: #212121; -fx-border-radius: 3em;" text="Cadastrar"
+                                   textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0"/>
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton prefHeight="70.0" prefWidth="185.0" text="Registros" textFill="WHITE"
+                                   VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Arial" size="18.0"/>
+                            </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="70.0" prefWidth="185.0" text="Relatórios" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="18.0"/>
+                            </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="70.0" prefWidth="185.0" text="Imprimir" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="18.0"/>
+                            </font>
+                        </JFXButton>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>
