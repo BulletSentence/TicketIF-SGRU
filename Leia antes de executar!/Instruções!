@@ -5,6 +5,4 @@
     Primeiramente precisamos configurar a persistência do projeto, veja se você possui o MySQL Server em seu computador
     você pode baixa-lo nesse link: https://dev.mysql.com/downloads/installer/
 
-    Agora você presisa do SCHEMA do banco de dados, use a função em SQL "CREATE SCHEMA IF NOT EXISTS ServerTicketif;"
-
     Tudo pronto? Agora você está no caminho certo!
