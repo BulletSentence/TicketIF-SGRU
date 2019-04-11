@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -74,19 +74,9 @@
                   <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField fx:id="tfUsuario" prefHeight="26.0" prefWidth="147.0" styleClass="btn-login" GridPane.rowIndex="1" />
-                  <PasswordField fx:id="tfSenha" prefWidth="148.0" styleClass="btn-login" GridPane.rowIndex="4" />
-                  <Label text="Senha:" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Open Sans Light" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label text="Usuário:">
-                     <font>
-                        <Font name="Open Sans Light" size="13.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="btnEntrar" mnemonicParsing="false" onAction="#btnAcLogin" styleClass="btn-login" text="Entrar" GridPane.rowIndex="6" />
+                  <JFXTextField fx:id="tfUsuario" labelFloat="true" prefHeight="26.0" prefWidth="147.0" promptText="Usuario" styleClass="btn-login" GridPane.rowIndex="1" />
+                  <JFXPasswordField fx:id="tfSenha" labelFloat="true" prefWidth="148.0" promptText="Senha" styleClass="btn-login" GridPane.rowIndex="4" />
+                  <JFXButton fx:id="btnEntrar" mnemonicParsing="false" onAction="#btnAcLogin" ripplerFill="#2d5226" style="-fx-background-color: #C0C0C0;" styleClass="btn-login" text="Entrar" GridPane.rowIndex="6" />
                </children>
             </GridPane>
             <Text layoutX="15.0" layoutY="76.0" opacity="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assuntos Estudantis">
