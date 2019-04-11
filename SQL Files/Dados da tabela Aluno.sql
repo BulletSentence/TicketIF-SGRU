@@ -1,0 +1,1 @@
+SELECT * FROM serverticketif.DB_ALUNO;

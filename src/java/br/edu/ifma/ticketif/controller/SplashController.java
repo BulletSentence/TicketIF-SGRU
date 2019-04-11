@@ -163,6 +163,7 @@ public class SplashController implements Initializable {
                 Exception execao = (Exception) event.getSource().getException();
 
                 GerenteLog logFactory = new GerenteLog();
+                System.out.println("Erro na chamada entre o Banco de Dados e o Programa! Verifique a pasta LOG nos arquivos do projeto");
                 logFactory.registrarExecao(execao);
             }
         });

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<JFXTabPane prefHeight="653.0" prefWidth="744.0" stylesheets="@../styles/TabStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<JFXTabPane prefHeight="653.0" prefWidth="744.0" stylesheets="@../styles/TabStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.HomeController">
     <tabs>
         <Tab text="Cadastar Aluno">
             <content>
@@ -52,7 +52,7 @@
                                                 <Insets />
                                             </GridPane.margin>
                                         </JFXTextField>
-                                        <JFXTextField fx:id="cadastro_alunoCPF" focusColor="#2e2e2e" labelFloat="true" promptText="CPF" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                        <JFXTextField fx:id="cadastro_alunoCPF" focusColor="#2e2e2e" labelFloat="true" onKeyReleased="#FormatadorMascaraCPF" promptText="CPF" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
@@ -70,7 +70,7 @@
                                         <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
                                     </padding>
                                 </GridPane>
-                                <JFXButton fx:id="btn_cadastrar" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #212121;" text="Cadastrar" textFill="WHITE">
+                                <JFXButton fx:id="btn_cadastrar" onAction="#clickCadastro" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #212121;" text="Cadastrar" textFill="WHITE">
                                     <VBox.margin>
                                         <Insets bottom="30.0" left="50.0" />
                                     </VBox.margin>

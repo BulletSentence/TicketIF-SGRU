@@ -1,6 +1,11 @@
 package br.edu.ifma.ticketif.controller;
 
 import br.edu.ifma.ticketif.core.Window;
+import br.edu.ifma.ticketif.model.DAO.AlunoDAO;
+import br.edu.ifma.ticketif.model.entity.database.Aluno;
+import br.edu.ifma.ticketif.util.errors.Alerts;
+import br.edu.ifma.ticketif.util.formatters.TextFieldFormatter;
+import br.edu.ifma.ticketif.util.validar.ValidaCPF;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -10,12 +15,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
 
     @FXML
     private BorderPane telaHome;
+
     @FXML
     private JFXTextField cadastro_alunoNome;
 
@@ -64,11 +71,55 @@ public class HomeController implements Initializable {
     @FXML
     private JFXComboBox<?> GerenciaAlunoTurma;
 
-
+    Alerts alert = new Alerts();
     private Window window = new Window();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+
+    @FXML
+    private void FormatadorMascaraCPF(){ //Mascara para formatar o texto do cpf
+        TextFieldFormatter tff = new TextFieldFormatter();
+        tff.setMask("###.###.###-##"); // Mascara de CPF
+        tff.setCaracteresValidos("0123456789");  // Somente Numeros
+        tff.setTf(cadastro_alunoCPF);
+        tff.formatter();
+    }
+
+    @FXML
+    public List<Aluno> clickCadastro(){
+        AlunoDAO alunoDAO = new AlunoDAO(); // Cria a conexão com o banco de dados
+        Aluno aluno = new Aluno(); // Cria a classe do aluno
+        ValidaCPF valid = new ValidaCPF();
+
+        aluno.setNome(cadastro_alunoNome.getText());
+        aluno.setMatricula(cadastro_alunoMatricula.getText().toUpperCase());
+        String cpf = cadastro_alunoCPF.getText();
+
+        //Verifica se é nulo
+        if(cadastro_alunoNome.getText()==null || cadastro_alunoNome.getText().trim().equals("")
+                || cadastro_alunoMatricula.getText()==null || cadastro_alunoMatricula.getText().trim().equals("")) {
+
+            alert.infoAlert("TicketIF", "Os campos não podem ser vazios", "Deus é fiel");
+
+        } else {
+
+            cpf = cpf.replaceAll("[-.]", "");   //remove mascara
+            if (valid.isValidCPF(cpf)) {             //cpf valido
+                aluno.setCpf(cadastro_alunoCPF.getText());
+                alunoDAO.inserirAluno(aluno);
+
+                // Janela de Aviso apos ser cadastrado um aluno;
+                alert.infoAlert("TicketIF", "Aluno Cadastrado com Sucesso!", "Deus é fiel");
+            } else {                                 //cpf invalido
+                // emite alerta
+                alert.infoAlert("TicketIF", "CPF invalido", "Insira novamente um CPF válido");
+                cadastro_alunoCPF.clear();
+            }
+        }
+
+        return alunoDAO.obterListaAluno();
     }
 
 
