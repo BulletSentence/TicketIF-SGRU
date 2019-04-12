@@ -1,6 +1,8 @@
 package br.edu.ifma.ticketif.model.entity.database;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Calendar;
 import javax.persistence.*;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
@@ -35,7 +37,7 @@ public class Aluno implements Serializable {
     private String sexo;
 
     @Column(name = "AL_DATA_NASC")
-    private String dataNasc;
+    private LocalDate dataNasc;
 
     @Column(name = "AL_TIPO")
     private String tipo;
@@ -76,11 +78,11 @@ public class Aluno implements Serializable {
         this.sexo = sexo;
     }
 
-    public String getDataNasc() {
+    public LocalDate getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(String dataNasc) {
+    public void setDataNasc(LocalDate dataNasc) {
         this.dataNasc = dataNasc;
     }
 

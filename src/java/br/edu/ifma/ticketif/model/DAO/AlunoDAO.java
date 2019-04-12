@@ -2,7 +2,6 @@ package br.edu.ifma.ticketif.model.DAO;
 
 import br.edu.ifma.ticketif.core.EntityManagerSource;
 import br.edu.ifma.ticketif.model.entity.database.Aluno;
-
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.util.List;
@@ -11,14 +10,11 @@ import java.util.List;
 public class AlunoDAO {
 
     private EntityManager entidadeGerenciamento;
-
     public AlunoDAO(){
         this.entidadeGerenciamento = EntityManagerSource.getEntityManager();
     }
 
-
     public Aluno getByCod(int codAluno) {
-
         return entidadeGerenciamento.find(Aluno.class, codAluno);
     }
 

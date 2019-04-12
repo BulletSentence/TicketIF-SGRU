@@ -12,10 +12,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Splash.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Splash.fxml")); // Carrega o FXML
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
+        
+        // Retira a barra superior de tarefas
         stage.initStyle(StageStyle.UNDECORATED);
+
+        // Gera a splash
         stage.setScene(scene);
         stage.show();
     }

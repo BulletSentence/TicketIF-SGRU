@@ -7,11 +7,11 @@ package br.edu.ifma.ticketif.model.DAO;
 
 import br.edu.ifma.ticketif.core.EntityManagerSource;
 import br.edu.ifma.ticketif.model.entity.User.Usuario;
-
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class UsuarioDAO {
 
     private EntityManager entidadeGerenciamento;

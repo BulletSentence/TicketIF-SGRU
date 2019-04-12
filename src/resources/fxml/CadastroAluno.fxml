@@ -5,9 +5,10 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -111,11 +112,12 @@
                                         <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
                                     </padding>
                                 </GridPane>
-                                <JFXTreeTableView VBox.vgrow="ALWAYS">
-                                    <VBox.margin>
-                                        <Insets bottom="50.0" left="50.0" right="50.0" />
-                                    </VBox.margin>
-                                </JFXTreeTableView>
+                        <TableView fx:id="tabelaAlunos" prefHeight="400.0" prefWidth="744.0">
+                          <columns>
+                            <TableColumn prefWidth="225.0" text="Nome" />
+                            <TableColumn minWidth="0.0" prefWidth="239.0" text="Matricula" />
+                          </columns>
+                        </TableView>
                             </children>
                         </VBox>
                     </children>
