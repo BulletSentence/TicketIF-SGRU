@@ -6,7 +6,7 @@
     <persistence-unit name="PersistenciaDAO" transaction-type="RESOURCE_LOCAL">
    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>br.edu.ifma.ticketif.model.entity.database.Aluno</class>
-        <class>br.edu.ifma.ticketif.model.entity.Usuario</class>
+        <class>br.edu.ifma.ticketif.model.entity.User.Usuario</class>
     <properties>
 
       <!--  propriedades do servidor -->
