@@ -10,25 +10,14 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
-
-import javax.persistence.Table;
 import java.net.URL;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Observable;
 import java.util.ResourceBundle;
-
-import static br.edu.ifma.ticketif.interfaces.ListaInterface.listaAluno;
 
 public class HomeController implements Initializable {
 
@@ -57,7 +46,7 @@ public class HomeController implements Initializable {
     private JFXDatePicker cadastro_alunoDataNasc;
 
     @FXML
-    private JFXComboBox<?> cadastro_alunoCurso;
+    private JFXComboBox<String> cadastro_alunoCurso;
 
     @FXML
     private JFXComboBox<?> cadastro_alunoTipo;
@@ -96,7 +85,7 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        ChoiceBoxGrupo();
     }
 
     @FXML
@@ -150,15 +139,10 @@ public class HomeController implements Initializable {
         return alunoDAO.obterListaAluno();
     }
 
-    private void loadData() {
+    public void ChoiceBoxGrupo(){
 
-        if (!listaAluno.isEmpty()) {
-            listaAluno.clear();
-        }
-        AlunoDAO alunoDAO = new AlunoDAO();
-        listaAluno.addAll(alunoDAO.obterListaAluno());
+        //cadastro_alunoCurso.getItems().add("CIENCIA");
     }
-
 
 
     @FXML
