@@ -134,16 +134,34 @@ public class CadastroAlunoController implements Initializable {
         aluno.setNome(cadastro_alunoNome.getText());
         aluno.setMatricula(cadastro_alunoMatricula.getText().toUpperCase());
         aluno.setEmail(cadastro_alunoEmail.getText());
-        //aluno.setFone(Integer.parseInt(cadastro_alunoFone.getText()));
+        aluno.setFone(cadastro_alunoFone.getText());
+        aluno.setSexo(cadastro_alunoSexo.getValue());
+        aluno.setTurma(cadastro_alunoTurma.getValue());
+        aluno.setTipo(cadastro_alunoTipo.getValue());
+        aluno.setCurso(cadastro_alunoCurso.getValue());
+        aluno.setAnoEntrada(Integer.parseInt(cadastro_alunoAnoEntrada.getValue()));
+        aluno.setAnoSaida(Integer.parseInt(cadastro_alunoAnoSaida.getValue()));
 
 //        LocalDate value = cadastro_alunoDataNasc.getValue();
 //        aluno.setDataNasc(value);
 
         String cpf = cadastro_alunoCPF.getText();
 
-        //Verifica se é nulo
-        if (cadastro_alunoNome.getText() == null || cadastro_alunoNome.getText().trim().equals("")
-                || cadastro_alunoMatricula.getText() == null || cadastro_alunoMatricula.getText().trim().equals("")) {
+        //Verifica os campos se são nulos
+
+        if (cadastro_alunoNome.getText() == null
+                || cadastro_alunoNome.getText().trim().equals("")
+                || cadastro_alunoMatricula.getText() == null
+                || cadastro_alunoMatricula.getText().trim().equals("")
+                || cadastro_alunoCPF.getText() == null
+                || cadastro_alunoCPF.getText().trim().equals("")
+                || cadastro_alunoCurso.getValue() == null
+                || cadastro_alunoCurso.getValue().trim().equals("")
+                || cadastro_alunoEmail.getText() == null
+                || cadastro_alunoEmail.getText().trim().equals("")
+                || cadastro_alunoSexo.getValue() == null
+                || cadastro_alunoSexo.getValue().trim().equals(""))
+        {
 
             alert.infoAlert("TicketIF", "Os campos não podem ser vazios", "Deus é fiel");
 

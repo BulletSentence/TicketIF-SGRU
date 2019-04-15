@@ -1,6 +1,7 @@
 package br.edu.ifma.ticketif.model.entity.database;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Calendar;
 import javax.persistence.*;
@@ -24,11 +25,8 @@ public class Aluno implements Serializable {
     @Column(name = "AL_MATRICULA")
     private String matricula;
 
-    @Column(name = "AL_DIGITAL")
-    private String digital;
-
     @Column(name = "AL_FONE")
-    private Integer fone;
+    private String fone;
 
     @Column(name = "AL_EMAIL")
     private String email;
@@ -37,7 +35,7 @@ public class Aluno implements Serializable {
     private String sexo;
 
     @Column(name = "AL_DATA_NASC")
-    private LocalDate dataNasc;
+    private Date dataNasc;
 
     @Column(name = "AL_TIPO")
     private String tipo;
@@ -54,13 +52,6 @@ public class Aluno implements Serializable {
     @Column(name = "AL_ANO_SAIDA")
     private Integer anoSaida;
 
-    public Integer getFone() {
-        return fone;
-    }
-
-    public void setFone(Integer fone) {
-        this.fone = fone;
-    }
 
     public String getEmail() {
         return email;
@@ -76,14 +67,6 @@ public class Aluno implements Serializable {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
-    }
-
-    public LocalDate getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setDataNasc(LocalDate dataNasc) {
-        this.dataNasc = dataNasc;
     }
 
     public String getTipo() {
@@ -158,13 +141,22 @@ public class Aluno implements Serializable {
         this.matricula = matricula;
     }
 
-    public String getDigital() {
-        return digital;
+    public String getFone() {
+        return fone;
     }
 
-    public void setDigital(String digital1) {
-        this.digital = digital1;
+    public void setFone(String fone) {
+        this.fone = fone;
     }
+
+    public Date getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+
 
     @Override
     public String toString(){
