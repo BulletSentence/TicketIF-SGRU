@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import jfxtras.styles.jmetro8.JMetro;
 
 public class Main extends Application {
 

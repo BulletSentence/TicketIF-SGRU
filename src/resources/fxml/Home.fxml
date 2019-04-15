@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="telaHome" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="935.0"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0"
             style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171"
             fx:controller="br.edu.ifma.ticketif.controller.HomeController">
    <top>
