@@ -46,23 +46,10 @@
             <version>2.5.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.jfxtras/jmetro -->
-        <dependency>
-            <groupId>org.jfxtras</groupId>
-            <artifactId>jmetro</artifactId>
-            <version>4.1</version>
-        </dependency>
-
         <dependency>
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
             <version>8.0.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>br.edu.ifma</groupId>
-            <artifactId>TicketIF</artifactId>
-            <version>0.1.7</version>
         </dependency>
 
         <dependency>
