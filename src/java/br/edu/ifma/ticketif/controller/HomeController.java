@@ -6,6 +6,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 
@@ -18,7 +21,9 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         btnCadastrar();
+
     }
 
     @FXML

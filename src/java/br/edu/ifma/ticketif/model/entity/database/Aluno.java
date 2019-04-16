@@ -52,7 +52,6 @@ public class Aluno implements Serializable {
     @Column(name = "AL_ANO_SAIDA")
     private Integer anoSaida;
 
-
     public String getEmail() {
         return email;
     }
