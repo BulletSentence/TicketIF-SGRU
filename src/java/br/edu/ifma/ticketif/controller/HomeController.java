@@ -8,7 +8,6 @@ import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
@@ -39,4 +38,8 @@ public class HomeController implements Initializable {
         window.loadWindow(telaHome, "/fxml/CadastroAluno.fxml");
     }
 
+    @FXML
+    private void btnRegistro() {
+        window.loadWindow(telaHome, "/fxml/Registro.fxml");
+    }
 }

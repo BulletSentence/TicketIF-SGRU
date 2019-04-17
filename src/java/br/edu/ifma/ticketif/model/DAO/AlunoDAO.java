@@ -2,6 +2,7 @@ package br.edu.ifma.ticketif.model.DAO;
 
 import br.edu.ifma.ticketif.core.EntityManagerSource;
 import br.edu.ifma.ticketif.model.entity.database.Aluno;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.util.List;
@@ -21,7 +22,7 @@ public class AlunoDAO {
     public List<Aluno> obterListaAluno() {
 
         entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
-        List<Aluno> listaAluno = entidadeGerenciamento.createQuery("select u from Aluno u").getResultList();
+        List<Aluno> listaAluno = entidadeGerenciamento.createQuery("select u from Aluno u", Aluno.class).getResultList();
         entidadeGerenciamento.getTransaction().commit();
         return listaAluno;
     }

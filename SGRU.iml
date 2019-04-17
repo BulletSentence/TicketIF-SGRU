@@ -32,9 +32,8 @@
     <orderEntry type="library" name="Maven: org.eclipse.persistence:eclipselink:2.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.persistence:javax.persistence:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.persistence:commonj.sdo:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jfxtras:jmetro:4.1" level="project" />
-    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.4" level="project" />
     <orderEntry type="library" name="Maven: br.edu.ifma:TicketIF:0.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.4" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
   </component>
 </module>

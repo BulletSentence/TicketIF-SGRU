@@ -15,15 +15,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class CadastroAlunoController implements Initializable {
 
@@ -111,7 +111,6 @@ public class CadastroAlunoController implements Initializable {
         cadastro_alunoCurso.getItems().addAll("Ciência da Computação", "Química", "Biologia");
     }
 
-    @FXML
     private void comboBoxSexo() {
         cadastro_alunoSexo.getItems().addAll("Masculino", "Feminino");
     }
@@ -212,7 +211,7 @@ public class CadastroAlunoController implements Initializable {
                 cadastro_alunoAnoSaida.setValue("");
                 cadastro_alunoMatricula.clear();
                 cadastro_alunoCurso.setValue("");
-                cadastro_alunoDataNasc.setValue(LocalDate.parse(null));
+                //cadastro_alunoDataNasc.setValue(LocalDate.parse(null));
 
             } else {
 

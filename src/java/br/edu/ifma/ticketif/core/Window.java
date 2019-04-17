@@ -14,12 +14,10 @@ import java.io.IOException;
 
 public class Window {
 
-    public void loadWindow(BorderPane localTela, String enderecoLocalTela) {
+    public void loadWindow(BorderPane localTela, String endecoNovaTela) {
         try {
-            JFXTabPane pane = FXMLLoader.load(getClass().getResource(enderecoLocalTela));
+            JFXTabPane pane = FXMLLoader.load(getClass().getResource(endecoNovaTela));
             localTela.getChildren().remove(localTela.getCenter());
-
-
             localTela.setCenter(pane);
         } catch (IOException e) {
             e.printStackTrace();

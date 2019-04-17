@@ -1,10 +1,8 @@
 package br.edu.ifma.ticketif.model.entity.database;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.Calendar;
-import javax.persistence.*;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
@@ -51,6 +49,16 @@ public class Aluno implements Serializable {
 
     @Column(name = "AL_ANO_SAIDA")
     private Integer anoSaida;
+
+    public Aluno(String nome, String matricula, String curso) {
+        this.nome = nome;
+        this.matricula = matricula;
+        this.curso = curso;
+    }
+
+    public Aluno() {
+
+    }
 
     public String getEmail() {
         return email;
