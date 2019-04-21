@@ -33,6 +33,8 @@ import java.util.*;
 
 public class CadastroAlunoController implements Initializable {
 
+    ObservableList<Aluno> dadosTabela = FXCollections.observableArrayList();
+
     Alerts alert = new Alerts();
 
     @FXML
@@ -59,7 +61,6 @@ public class CadastroAlunoController implements Initializable {
     private JFXComboBox<String> aluno_ano_entrada;
     @FXML
     private JFXComboBox<String> aluno_ano_saida;
-
     @FXML
     private TableView<Aluno> tabelaAlunos;
     @FXML
@@ -207,7 +208,6 @@ public class CadastroAlunoController implements Initializable {
     @FXML
     private void importaArquivoExcel() {
         List<String> dados = new ArrayList<>();
-        ObservableList<Aluno> dadosTabela = FXCollections.observableArrayList();
 
         try {
             FileChooser fileChooser = new FileChooser();
@@ -242,7 +242,31 @@ public class CadastroAlunoController implements Initializable {
         colunaCurso.setCellValueFactory(new PropertyValueFactory<>("curso"));
         tabelaAlunos.setItems(dadosTabela);
 
-
     }
 
+    @FXML
+    private void salvarExelParaTabela(){
+
+        int indice = 0;
+        int tamanhoTabela = colunaNome.getTableView().getItems().size();
+        System.out.println(tamanhoTabela);
+
+      while (indice < tamanhoTabela){
+          AlunoDAO alunoDAO = new AlunoDAO();
+          Aluno aluno = new Aluno();
+
+          aluno.setNome(colunaNome.getCellData(indice));
+          aluno.setMatricula(colunaMatricula.getCellData(indice));
+          aluno.setCurso(colunaCurso.getCellData(indice));
+
+          alunoDAO.inserirAluno(aluno);
+            indice++;
+        }
+
+    }
 }
+
+
+
+
+

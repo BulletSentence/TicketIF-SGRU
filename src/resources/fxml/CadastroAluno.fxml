@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<JFXTabPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="609.0" prefWidth="744.0" stylesheets="@../styles/tab.css"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            fx:controller="br.edu.ifma.ticketif.controller.CadastroAlunoController">
+
+<JFXTabPane prefHeight="609.0" prefWidth="744.0" stylesheets="@../styles/tab.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.CadastroAlunoController">
     <tabs>
         <Tab text="Cadastar Aluno">
             <content>
@@ -15,9 +25,7 @@
                     <center>
                         <VBox prefHeight="618.0" prefWidth="744.0" BorderPane.alignment="CENTER">
                             <children>
-                                <GridPane hgap="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                          minWidth="-Infinity" prefHeight="506.0" prefWidth="744.0" vgap="1.0"
-                                          VBox.vgrow="ALWAYS">
+                                <GridPane hgap="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="744.0" vgap="1.0" VBox.vgrow="ALWAYS">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -31,73 +39,40 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
-                                        <JFXTextField fx:id="aluno_nome" focusColor="#2e2e2e" labelFloat="true"
-                                                      promptText="Nome" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                        <JFXTextField fx:id="aluno_nome" focusColor="#2e2e2e" labelFloat="true" promptText="Nome" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
                                         </JFXTextField>
-                                        <JFXTextField fx:id="aluno_email" focusColor="#2e2e2e" labelFloat="true"
-                                                      promptText="Email" GridPane.columnIndex="1"
-                                                      GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                        <JFXTextField fx:id="aluno_email" focusColor="#2e2e2e" labelFloat="true" promptText="Email" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
                                         </JFXTextField>
-                                        <JFXTextField fx:id="aluno_matricula" focusColor="#2e2e2e" labelFloat="true"
-                                                      promptText="Matrícula" GridPane.hgrow="ALWAYS"
-                                                      GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                        <JFXTextField fx:id="aluno_matricula" focusColor="#2e2e2e" labelFloat="true" promptText="Matrícula" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
                                         </JFXTextField>
-                                        <JFXTextField fx:id="aluno_cpf" focusColor="#2e2e2e" labelFloat="true"
-                                                      onKeyReleased="#MascaraCPF" promptText="CPF"
-                                                      GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
-                                                      GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                        <JFXTextField fx:id="aluno_cpf" focusColor="#2e2e2e" labelFloat="true" onKeyReleased="#MascaraCPF" promptText="CPF" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
                                         </JFXTextField>
-                                        <JFXTextField fx:id="aluno_fone" focusColor="#2e2e2e" labelFloat="true"
-                                                      promptText="Fone" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"
-                                                      GridPane.vgrow="ALWAYS"/>
-                                        <JFXComboBox fx:id="aluno_sexo" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="28.0" prefWidth="324.0" promptText="Sexo"
-                                                     GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
-                                                     GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
-                                        <JFXDatePicker fx:id="aluno_data_nasc" defaultColor="#2e2e2e" prefHeight="25.0"
-                                                       prefWidth="329.0" promptText="Data de Nascimento"
-                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="3"
-                                                       GridPane.vgrow="ALWAYS"/>
-                                        <JFXComboBox fx:id="aluno_curso" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="28.0" prefWidth="361.0" promptText="Curso"
-                                                     GridPane.hgrow="ALWAYS" GridPane.rowIndex="4"
-                                                     GridPane.vgrow="ALWAYS"/>
-                                        <JFXComboBox fx:id="aluno_tipo" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="25.0" prefWidth="298.0" promptText="Tipo de aluno"
-                                                     GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
-                                                     GridPane.rowIndex="3" GridPane.vgrow="ALWAYS"/>
-                                        <JFXComboBox fx:id="aluno_turma" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="25.0" prefWidth="319.0" promptText="Turma"
-                                                     GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
-                                                     GridPane.rowIndex="4" GridPane.vgrow="ALWAYS"/>
-                                        <JFXComboBox fx:id="aluno_ano_entrada" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="25.0" prefWidth="319.0" promptText="Ano de entrada"
-                                                     GridPane.hgrow="ALWAYS" GridPane.rowIndex="5"
-                                                     GridPane.vgrow="ALWAYS"/>
-                                        <JFXComboBox fx:id="aluno_ano_saida" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="25.0" prefWidth="391.0" promptText="Ano de saida"
-                                                     GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
-                                                     GridPane.rowIndex="5" GridPane.vgrow="ALWAYS"/>
+                                        <JFXTextField fx:id="aluno_fone" focusColor="#2e2e2e" labelFloat="true" promptText="Fone" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                                        <JFXComboBox fx:id="aluno_sexo" focusColor="#2e2e2e" labelFloat="true" prefHeight="28.0" prefWidth="324.0" promptText="Sexo" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                                        <JFXDatePicker fx:id="aluno_data_nasc" defaultColor="#2e2e2e" prefHeight="25.0" prefWidth="329.0" promptText="Data de Nascimento" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                                        <JFXComboBox fx:id="aluno_curso" focusColor="#2e2e2e" labelFloat="true" prefHeight="28.0" prefWidth="361.0" promptText="Curso" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+                                        <JFXComboBox fx:id="aluno_tipo" focusColor="#2e2e2e" labelFloat="true" prefHeight="25.0" prefWidth="298.0" promptText="Tipo de aluno" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                                        <JFXComboBox fx:id="aluno_turma" focusColor="#2e2e2e" labelFloat="true" prefHeight="25.0" prefWidth="319.0" promptText="Turma" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+                                        <JFXComboBox fx:id="aluno_ano_entrada" focusColor="#2e2e2e" labelFloat="true" prefHeight="25.0" prefWidth="319.0" promptText="Ano de entrada" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
+                                        <JFXComboBox fx:id="aluno_ano_saida" focusColor="#2e2e2e" labelFloat="true" prefHeight="25.0" prefWidth="391.0" promptText="Ano de saida" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
                                     </children>
                                     <padding>
                                         <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
                                     </padding>
                                 </GridPane>
-                                <JFXButton fx:id="btn_cadastrar" onAction="#clickCadastro" prefHeight="35.0"
-                                           prefWidth="96.0" style="-fx-background-color: #212121;" text="Cadastrar"
-                                           textFill="WHITE" VBox.vgrow="ALWAYS">
+                                <JFXButton fx:id="btn_cadastrar" onAction="#clickCadastro" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #212121;" text="Cadastrar" textFill="WHITE" VBox.vgrow="ALWAYS">
                                     <VBox.margin>
                                         <Insets bottom="30.0" left="50.0" />
                                     </VBox.margin>
@@ -127,28 +102,22 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
-                                        <JFXComboBox fx:id="gerenciaAlunoCurso" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="28.0" prefWidth="361.0" promptText="Curso"/>
-                                        <JFXComboBox fx:id="gerenciaAlunoTipo" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="25.0" prefWidth="298.0" promptText="Tipo"
-                                                     GridPane.rowIndex="1"/>
-                                        <JFXComboBox fx:id="GerenciaAlunoTurma" focusColor="#2e2e2e" labelFloat="true"
-                                                     prefHeight="25.0" prefWidth="319.0" promptText="Turma"
-                                                     GridPane.columnIndex="1"/>
+                                        <JFXComboBox fx:id="gerenciaAlunoCurso" focusColor="#2e2e2e" labelFloat="true" prefHeight="28.0" prefWidth="361.0" promptText="Curso" />
+                                        <JFXComboBox fx:id="gerenciaAlunoTipo" focusColor="#2e2e2e" labelFloat="true" prefHeight="25.0" prefWidth="298.0" promptText="Tipo" GridPane.rowIndex="1" />
+                                        <JFXComboBox fx:id="GerenciaAlunoTurma" focusColor="#2e2e2e" labelFloat="true" prefHeight="25.0" prefWidth="319.0" promptText="Turma" GridPane.columnIndex="1" />
                                     </children>
                                     <padding>
                                         <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
                                     </padding>
                                 </GridPane>
-                                <TableView fx:id="tabelaAlunos" prefHeight="323.0" prefWidth="644.0"
-                                           stylesheets="@../styles/tabela.css" VBox.vgrow="ALWAYS">
+                                <TableView fx:id="tabelaAlunos" prefHeight="323.0" prefWidth="644.0" stylesheets="@../styles/tabela.css" VBox.vgrow="ALWAYS">
                                     <columnResizePolicy>
-                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                     </columnResizePolicy>
                           <columns>
-                              <TableColumn fx:id="colunaNome" prefWidth="225.0" text="Nome"/>
-                              <TableColumn fx:id="colunaMatricula" minWidth="0.0" prefWidth="239.0" text="Matricula"/>
-                              <TableColumn fx:id="colunaCurso" prefWidth="75.0" text="Curso"/>
+                              <TableColumn fx:id="colunaNome" prefWidth="225.0" text="Nome" />
+                              <TableColumn fx:id="colunaMatricula" minWidth="0.0" prefWidth="239.0" text="Matricula" />
+                              <TableColumn fx:id="colunaCurso" prefWidth="75.0" text="Curso" />
                           </columns>
                                     <VBox.margin>
                                         <Insets bottom="50.0" left="50.0" right="50.0" />
@@ -156,26 +125,23 @@
                         </TableView>
                                 <HBox prefHeight="56.0" prefWidth="694.0" VBox.vgrow="ALWAYS">
                                     <VBox.margin>
-                                        <Insets bottom="30.0" left="50.0"/>
+                                        <Insets bottom="30.0" left="50.0" />
                                     </VBox.margin>
                                     <children>
-                                        <JFXButton onAction="#importaArquivoExcel" prefHeight="35.0"
-                                                   style="-fx-background-color: #212121;"
-                                                   text="Importar tabela do excel" textFill="WHITE">
+                                        <JFXButton onAction="#importaArquivoExcel" prefHeight="35.0" style="-fx-background-color: #212121;" text="Importar tabela do excel" textFill="WHITE">
                                             <font>
-                                                <Font name="Arial Bold" size="12.0"/>
+                                                <Font name="Arial Bold" size="12.0" />
                                             </font>
                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </padding>
                                         </JFXButton>
-                                        <JFXButton prefHeight="35.0" style="-fx-background-color: #212121;"
-                                                   text="Salvar" textFill="WHITE">
+                                        <JFXButton onAction="#salvarExelParaTabela" prefHeight="35.0" style="-fx-background-color: #212121;" text="Salvar" textFill="WHITE">
                                             <HBox.margin>
-                                                <Insets left="20.0"/>
+                                                <Insets left="20.0" />
                                             </HBox.margin>
                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </padding>
                                         </JFXButton>
                                     </children>
