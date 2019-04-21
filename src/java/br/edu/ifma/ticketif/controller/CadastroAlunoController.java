@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -209,7 +210,9 @@ public class CadastroAlunoController implements Initializable {
         ObservableList<Aluno> dadosTabela = FXCollections.observableArrayList();
 
         try {
-            FileInputStream file = new FileInputStream("D:/leona/Documents/alunos.xlsx");
+            FileChooser fileChooser = new FileChooser();
+            FileInputStream file = new FileInputStream(fileChooser.showOpenDialog(null));
+
             Workbook workbook = new XSSFWorkbook(file);
             Sheet sheet = workbook.getSheetAt(0);
 
