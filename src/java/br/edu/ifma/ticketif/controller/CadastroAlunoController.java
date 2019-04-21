@@ -5,7 +5,6 @@ import br.edu.ifma.ticketif.model.entity.database.Aluno;
 import br.edu.ifma.ticketif.util.errors.Alerts;
 import br.edu.ifma.ticketif.util.formatters.TextFieldFormatter;
 import br.edu.ifma.ticketif.util.validar.ValidaCPF;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
@@ -15,62 +14,59 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class CadastroAlunoController implements Initializable {
 
-    @FXML
-    protected TableView<?> tabelaAlunos;
     Alerts alert = new Alerts();
-    @FXML
-    private JFXTextField cadastro_alunoNome;
-    @FXML
-    private JFXTextField cadastro_alunoEmail;
-    @FXML
-    private JFXTextField cadastro_alunoMatricula;
-    @FXML
-    private JFXTextField cadastro_alunoCPF;
-    @FXML
-    private JFXTextField cadastro_alunoFone;
-    @FXML
-    private JFXComboBox<String> cadastro_alunoSexo;
-    @FXML
-    private JFXDatePicker cadastro_alunoDataNasc;
-    @FXML
-    private JFXComboBox<String> cadastro_alunoCurso;
-    @FXML
-    private JFXComboBox<String> cadastro_alunoTipo;
-    @FXML
-    private JFXComboBox<String> cadastro_alunoTurma;
-    @FXML
-    private JFXComboBox<String> cadastro_alunoAnoEntrada;
-    @FXML
-    private JFXComboBox<String> cadastro_alunoAnoSaida;
-    @FXML
-    private JFXButton btn_cadastrar;
-    @FXML
-    private JFXComboBox<String> gerenciaAlunoCurso;
-    @FXML
-    private JFXComboBox<?> gerenciaAlunoTipo;
-    @FXML
-    private JFXComboBox<?> GerenciaAlunoTurma;
-    @FXML
-    private TableView<Aluno> tableAlunos;
-    @FXML
-    private TableColumn<Aluno, String> nomeColuna;
-    @FXML
-    private TableColumn<Aluno, String> matColuna;
 
-    private ObservableList<Aluno> data = FXCollections.observableArrayList();
+    @FXML
+    private JFXTextField aluno_nome;
+    @FXML
+    private JFXTextField aluno_email;
+    @FXML
+    private JFXTextField aluno_matricula;
+    @FXML
+    private JFXTextField aluno_cpf;
+    @FXML
+    private JFXTextField aluno_fone;
+    @FXML
+    private JFXComboBox<String> aluno_sexo;
+    @FXML
+    private JFXDatePicker aluno_data_nasc;
+    @FXML
+    private JFXComboBox<String> aluno_curso;
+    @FXML
+    private JFXComboBox<String> aluno_tipo;
+    @FXML
+    private JFXComboBox<String> aluno_turma;
+    @FXML
+    private JFXComboBox<String> aluno_ano_entrada;
+    @FXML
+    private JFXComboBox<String> aluno_ano_saida;
 
+    @FXML
+    private TableView<Aluno> tabelaAlunos;
+    @FXML
+    private TableColumn<Aluno, String> colunaNome;
+    @FXML
+    private TableColumn<Aluno, String> colunaMatricula;
+    @FXML
+    private TableColumn<Aluno, String> colunaCurso;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -83,9 +79,6 @@ public class CadastroAlunoController implements Initializable {
         comboBoxAnoEntrada();
     }
 
-    /**
-     * ITENS DAS COMBOBOX DA TELA DE CADASTRO DO ALUNO
-     ******************************/
     public void comboBoxAnoEntrada() {
         ArrayList<String> anos = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("yyyy");
@@ -96,68 +89,58 @@ public class CadastroAlunoController implements Initializable {
             anos.add(index, String.valueOf(i));
         }
 
-        cadastro_alunoAnoEntrada.getItems().addAll(anos);
+        aluno_ano_entrada.getItems().addAll(anos);
     }
 
     private void comboBoxAnoSaida() {
-        cadastro_alunoAnoSaida.getItems().addAll("2019", "2010", "2021");
+        aluno_ano_saida.getItems().addAll("2019", "2010", "2021");
     }
 
     private void comboBoxTurma() {
-        cadastro_alunoTurma.getItems().addAll("2019.1", "2019.2", "2010.1");
+        aluno_turma.getItems().addAll("2019.1", "2019.2", "2010.1");
     }
 
     private void comboBoxCurso() {
-        cadastro_alunoCurso.getItems().addAll("Ciência da Computação", "Química", "Biologia");
+        aluno_curso.getItems().addAll("Ciência da Computação", "Química", "Biologia");
     }
 
     private void comboBoxSexo() {
-        cadastro_alunoSexo.getItems().addAll("Masculino", "Feminino");
+        aluno_sexo.getItems().addAll("Masculino", "Feminino");
     }
 
-    /**
-     * FIM DOS METODOS DOS ITENS DA COMBOBOX DA TELA DE CADASTRO
-     ********************/
-
-
-    @FXML
     private void comboBoxTipoAluno() {
-        cadastro_alunoTipo.getItems().addAll("Externo", "Interno");
+        aluno_tipo.getItems().addAll("Externo", "Interno");
     }
 
-    /**
-     * Mascara validadora de cpf
-     */
-
     @FXML
-    private void FormatadorMascaraCPF() { //Mascara para formatar o texto do cpf
+    private void MascaraCPF() { //Mascara para formatar o texto do cpf
         TextFieldFormatter tff = new TextFieldFormatter();
         tff.setMask("###.###.###-##"); // Mascara de CPF
         tff.setCaracteresValidos("0123456789");  // Somente Numeros
-        tff.setTf(cadastro_alunoCPF);
+        tff.setTf(aluno_cpf);
         tff.formatter();
     }
 
     @FXML
-    public List<Aluno> clickCadastro() {
+    private List<Aluno> clickCadastro() {
         AlunoDAO alunoDAO = new AlunoDAO();
-        Aluno aluno = new Aluno(); // Cria a classe do aluno
+        Aluno aluno = new Aluno();
         ValidaCPF valid = new ValidaCPF();
 
         try {
 
-            aluno.setNome(cadastro_alunoNome.getText());
-            aluno.setMatricula(cadastro_alunoMatricula.getText().toUpperCase());
-            aluno.setEmail(cadastro_alunoEmail.getText());
-            aluno.setFone(cadastro_alunoFone.getText());
-            aluno.setSexo(cadastro_alunoSexo.getValue());
-            aluno.setTurma(cadastro_alunoTurma.getValue());
-            aluno.setTipo(cadastro_alunoTipo.getValue());
-            aluno.setCurso(cadastro_alunoCurso.getValue());
-            aluno.setAnoEntrada(Integer.parseInt(cadastro_alunoAnoEntrada.getValue()));
-            aluno.setAnoSaida(Integer.parseInt(cadastro_alunoAnoSaida.getValue()));
+            aluno.setNome(aluno_nome.getText());
+            aluno.setMatricula(aluno_matricula.getText().toUpperCase());
+            aluno.setEmail(aluno_email.getText());
+            aluno.setFone(aluno_fone.getText());
+            aluno.setSexo(aluno_sexo.getValue());
+            aluno.setTurma(aluno_turma.getValue());
+            aluno.setTipo(aluno_tipo.getValue());
+            aluno.setCurso(aluno_curso.getValue());
+            aluno.setAnoEntrada(Integer.parseInt(aluno_ano_entrada.getValue()));
+            aluno.setAnoSaida(Integer.parseInt(aluno_ano_saida.getValue()));
 
-            LocalDate localDate = cadastro_alunoDataNasc.getValue();
+            LocalDate localDate = aluno_data_nasc.getValue();
             java.sql.Date sqlDate = java.sql.Date.valueOf(localDate);
             aluno.setDataNasc(sqlDate);
 
@@ -165,25 +148,24 @@ public class CadastroAlunoController implements Initializable {
             e.printStackTrace();
         }
 
-        String cpf = cadastro_alunoCPF.getText();
+        String cpf = aluno_cpf.getText();
 
-        //Verifica os campos se são nulos
-        if (cadastro_alunoNome.getText() == null
-                || cadastro_alunoNome.getText().trim().equals("")
-                || cadastro_alunoMatricula.getText() == null
-                || cadastro_alunoMatricula.getText().trim().equals("")
-                || cadastro_alunoCPF.getText() == null
-                || cadastro_alunoCPF.getText().trim().equals("")
-                || cadastro_alunoCurso.getValue() == null
-                || cadastro_alunoCurso.getValue().trim().equals("")
-                || cadastro_alunoEmail.getText() == null
-                || cadastro_alunoEmail.getText().trim().equals("")
-                || cadastro_alunoSexo.getValue() == null
-                || cadastro_alunoSexo.getValue().trim().equals("")
-                || cadastro_alunoTurma.getValue() == null
-                || cadastro_alunoTurma.getValue().trim().equals("")
-                || cadastro_alunoTipo.getValue() == null
-                || cadastro_alunoTipo.getValue().trim().equals(""))
+        if (aluno_nome.getText() == null
+                || aluno_nome.getText().trim().equals("")
+                || aluno_matricula.getText() == null
+                || aluno_matricula.getText().trim().equals("")
+                || aluno_cpf.getText() == null
+                || aluno_cpf.getText().trim().equals("")
+                || aluno_curso.getValue() == null
+                || aluno_curso.getValue().trim().equals("")
+                || aluno_email.getText() == null
+                || aluno_email.getText().trim().equals("")
+                || aluno_sexo.getValue() == null
+                || aluno_sexo.getValue().trim().equals("")
+                || aluno_turma.getValue() == null
+                || aluno_turma.getValue().trim().equals("")
+                || aluno_tipo.getValue() == null
+                || aluno_tipo.getValue().trim().equals(""))
         {
 
             alert.infoAlert("TicketIF", "Os campos não podem ser vazios", "Deus é fiel");
@@ -192,37 +174,72 @@ public class CadastroAlunoController implements Initializable {
 
             cpf = cpf.replaceAll("[-.]", "");   //remove mascara
             if (valid.isValidCPF(cpf)) {             //cpf valido
-                aluno.setCpf(cadastro_alunoCPF.getText());
+                aluno.setCpf(aluno_cpf.getText());
                 alunoDAO.inserirAluno(aluno);
-
-                /**
-                 * Janela de Aviso apos ser cadastrado um aluno */
 
                 alert.infoAlert("TicketIF", "Aluno Cadastrado com Sucesso!", "Deus é fiel");
 
-                cadastro_alunoNome.clear();
-                cadastro_alunoCPF.clear();
-                cadastro_alunoTipo.setValue("");
-                cadastro_alunoTurma.setValue("");
-                cadastro_alunoSexo.setValue("");
-                cadastro_alunoEmail.clear();
-                cadastro_alunoFone.clear();
-                cadastro_alunoAnoEntrada.setValue("");
-                cadastro_alunoAnoSaida.setValue("");
-                cadastro_alunoMatricula.clear();
-                cadastro_alunoCurso.setValue("");
-                //cadastro_alunoDataNasc.setValue(LocalDate.parse(null));
+                aluno_nome.clear();
+                aluno_cpf.clear();
+                aluno_tipo.setValue("");
+                aluno_turma.setValue("");
+                aluno_sexo.setValue("");
+                aluno_email.clear();
+                aluno_fone.clear();
+                aluno_ano_entrada.setValue("");
+                aluno_ano_saida.setValue("");
+                aluno_matricula.clear();
+                aluno_curso.setValue("");
+                //aluno_data_nasc.setValue(LocalDate.parse(null));
 
             } else {
 
                 // emite alerta caso o cpf seja invalido
                 alert.infoAlert("TicketIF", "CPF invalido", "Insira novamente um CPF válido");
-                cadastro_alunoCPF.clear();
+                aluno_cpf.clear();
             }
         }
 
         return alunoDAO.obterListaAluno();
     }
 
+    @FXML
+    private void importaArquivoExcel() {
+        List<String> dados = new ArrayList<>();
+        ObservableList<Aluno> dadosTabela = FXCollections.observableArrayList();
+
+        try {
+            FileInputStream file = new FileInputStream("D:/leona/Documents/alunos.xlsx");
+            Workbook workbook = new XSSFWorkbook(file);
+            Sheet sheet = workbook.getSheetAt(0);
+
+            Iterator<Row> rowIterator = sheet.iterator();
+
+            while (rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                Iterator<Cell> cellIterator = row.cellIterator();
+
+                int count = 0;
+                while (cellIterator.hasNext()) {
+                    Cell cell = cellIterator.next();
+                    System.out.println(cell.toString());
+                    dados.add(count, cell.toString());
+                    count++;
+                }
+                dadosTabela.add(new Aluno(dados.get(0), dados.get(1), dados.get(2)));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));
+        colunaCurso.setCellValueFactory(new PropertyValueFactory<>("curso"));
+        tabelaAlunos.setItems(dadosTabela);
+
+
+    }
 
 }

@@ -11,15 +11,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class RegistrosController implements Initializable {
 
-    AlunoDAO aluno = new AlunoDAO();
-    List<Aluno> listaAluno = new ArrayList<>();
-    ObservableList<Aluno> dadosTabela = FXCollections.observableArrayList();
     @FXML
     private TableView<Aluno> tabelaAlunos;
     @FXML
@@ -29,17 +25,21 @@ public class RegistrosController implements Initializable {
     @FXML
     private TableColumn<Aluno, String> colunaCurso;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        atualizaTabela();
+    }
 
-        listaAluno = aluno.obterListaAluno();
+
+    private void atualizaTabela() {
+        AlunoDAO aluno = new AlunoDAO();
+        ObservableList<Aluno> dadosTabela = FXCollections.observableArrayList();
+
+        List<Aluno> listaAluno = aluno.obterListaAluno();
         for (Aluno a : listaAluno) {
             dadosTabela.add(new Aluno(a.getNome(), a.getMatricula(), a.getCurso()));
         }
-
-
-        //System.out.println(listaAluno.get(0).getNome());
-        System.out.println(listaAluno.size());
 
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));
@@ -47,5 +47,4 @@ public class RegistrosController implements Initializable {
         tabelaAlunos.setItems(dadosTabela);
 
     }
-
 }

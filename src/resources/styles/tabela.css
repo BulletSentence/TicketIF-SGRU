@@ -18,7 +18,7 @@
 .tree-table-view .column-header {
     -fx-size: 65;
     -fx-border-style: null;
-    -fx-border-color: -swatch-grey;
+    -fx-border-color: #C0C0C0;
     -fx-border-width: 0 0 2 0;
     -fx-background-color: transparent;
 }

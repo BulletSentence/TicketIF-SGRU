@@ -188,7 +188,7 @@ public class SplashController implements Initializable {
 
         if (usuarioLogado.isLogado()) {
             Window c = new Window();
-            c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/TabStyle.css.css", "TicketIF", true, StageStyle.DECORATED, false);
+            c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/tab.css.css", "TicketIF", true, StageStyle.DECORATED, false);
             stage = (Stage) lbFechar.getScene().getWindow();
             stage.close();
         } else {
@@ -196,7 +196,7 @@ public class SplashController implements Initializable {
         }
 
         Window c = new Window();
-        c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/TabStyle.css", "TicketIF", true, StageStyle.DECORATED, false);
+        c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/tab.css", "TicketIF", true, StageStyle.DECORATED, false);
         stage = (Stage) lbFechar.getScene().getWindow();
         stage.close();
         System.out.println("Usuario:Logado mas não Conectado");
