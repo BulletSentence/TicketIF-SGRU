@@ -247,6 +247,9 @@ public class CadastroAlunoController implements Initializable {
     @FXML
     private void salvarExelParaTabela(){
 
+        //TODO
+        // Verificação no banco de dados se há um registro igual
+
         int indice = 0;
         int tamanhoTabela = colunaNome.getTableView().getItems().size();
         System.out.println(tamanhoTabela);
@@ -255,12 +258,18 @@ public class CadastroAlunoController implements Initializable {
           AlunoDAO alunoDAO = new AlunoDAO();
           Aluno aluno = new Aluno();
 
-          aluno.setNome(colunaNome.getCellData(indice));
-          aluno.setMatricula(colunaMatricula.getCellData(indice));
-          aluno.setCurso(colunaCurso.getCellData(indice));
+          try {
 
-          alunoDAO.inserirAluno(aluno);
-            indice++;
+              aluno.setNome(colunaNome.getCellData(indice));
+              aluno.setMatricula(colunaMatricula.getCellData(indice));
+              aluno.setCurso(colunaCurso.getCellData(indice));
+
+              alunoDAO.inserirAluno(aluno);
+              indice++;
+
+          }catch (Exception e){
+              e.printStackTrace();
+          }
         }
 
     }

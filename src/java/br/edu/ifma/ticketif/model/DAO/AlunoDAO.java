@@ -41,6 +41,13 @@ public class AlunoDAO {
     }
 
     public boolean inserirAluno(Aluno aluno) {
+        //TODO
+        //verificação se o usuario já está cadastrado
+
+//        if (this.alunoExistente(aluno)) {
+//            return false;
+//        }
+
         try {
             entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
             entidadeGerenciamento.persist(aluno);
@@ -48,13 +55,13 @@ public class AlunoDAO {
             return true;
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+
             entidadeGerenciamento.getTransaction().rollback();    //Desfaz alterações, em caso de erro
             return false;
         }
     }
 
-    public boolean usuarioExistente(Aluno aluno) {
+    public boolean alunoExistente(Aluno aluno) {
         try {
             aluno = (Aluno) entidadeGerenciamento.createQuery("SELECT u FROM Aluno u WHERE u.nome LIKE :nome").setParameter("nome", "%" + aluno.getNome() + "%").getSingleResult();
             return true; // Se encontrou registro, então OK!
@@ -90,6 +97,7 @@ public class AlunoDAO {
             return false;
         }
     }
+
 
 
 }
