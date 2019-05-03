@@ -20,7 +20,7 @@ public class Aluno implements Serializable {
     @Column(name = "AL_CPF")
     private String cpf;
 
-    @Column(name = "AL_MATRICULA")
+    @Column(name = "AL_MATRICULA", unique = true)
     private String matricula;
 
     @Column(name = "AL_FONE")
