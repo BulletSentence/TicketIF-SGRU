@@ -177,9 +177,14 @@ public class CadastroAlunoController implements Initializable {
             cpf = cpf.replaceAll("[-.]", "");   //remove mascara
             if (valid.isValidCPF(cpf)) {             //cpf valido
                 aluno.setCpf(aluno_cpf.getText());
-                alunoDAO.inserirAluno(aluno);
 
-                alert.infoAlert("TicketIF", "Aluno Cadastrado com Sucesso!", "Deus é fiel");
+                // Adiciona o ALuno
+                try {
+                    alunoDAO.inserirAluno(aluno);
+                    alert.infoAlert("TicketIF", "Aluno Cadastrado com Sucesso!", "Deus é fiel");
+                }catch (Exception e){
+                    alert.infoAlert("TicketIF", "Usuario já cadastrado", " ");
+                }
 
                 aluno_nome.clear();
                 aluno_cpf.clear();
@@ -246,9 +251,6 @@ public class CadastroAlunoController implements Initializable {
 
     @FXML
     private void salvarExelParaTabela(){
-
-        //TODO
-        // Verificação no banco de dados se há um registro igual
 
         int indice = 0;
         int tamanhoTabela = colunaNome.getTableView().getItems().size();

@@ -17,7 +17,7 @@ public class Aluno implements Serializable {
     @Column(name = "AL_NOME")
     private String nome;
 
-    @Column(name = "AL_CPF")
+    @Column(name = "AL_CPF", unique = true)
     private String cpf;
 
     @Column(name = "AL_MATRICULA", unique = true)
