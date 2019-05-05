@@ -5,6 +5,7 @@
  */
 package br.edu.ifma.ticketif.controller;
 
+import br.edu.ifma.ticketif.util.errors.Alerts;
 import br.edu.ifma.ticketif.core.GerenteLog;
 import br.edu.ifma.ticketif.core.Window;
 import br.edu.ifma.ticketif.model.DAO.UsuarioDAO;
@@ -53,6 +54,8 @@ public class SplashController implements Initializable {
     @FXML
     private JFXSpinner loading;
 
+    Alerts alert = new Alerts();
+
     Stage stage;
 
     Service<List<Usuario>> service;
@@ -89,14 +92,18 @@ public class SplashController implements Initializable {
                     @Override
                     protected List<Usuario> call() throws Exception {
 
-                        //Usuario user = new Usuario();
-                        //user.setNome("Usuario");
-                        //user.setLogin("user");
-                       // user.setSenha("user");
+                        Usuario user = new Usuario();
+                        user.setNome("Usuario Padrão");
+                        user.setLogin("");
+                        user.setSenha("");
 
                        UsuarioDAO usuarioDAO = new UsuarioDAO();
-                        //usuarioDAO.atualizar(user);
-                        //usuarioDAO.inserir(user);
+                       try {
+                           usuarioDAO.atualizar(user);
+                           usuarioDAO.inserir(user);
+                       }catch (Exception e){
+                           System.out.println("Usuario padrão");
+                       }
                         return usuarioDAO.obterLista();
 
 
@@ -188,18 +195,12 @@ public class SplashController implements Initializable {
 
         if (usuarioLogado.isLogado()) {
             Window c = new Window();
-            c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/tab.css.css", "TicketIF", true, StageStyle.DECORATED, false);
+            c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/tab.css", "TicketIF", true, StageStyle.DECORATED, false);
             stage = (Stage) lbFechar.getScene().getWindow();
             stage.close();
         } else {
-            // Window.createDialog(Alert.AlertType.ERROR, "Falha na autenticação", "Usuário e/ou senha inválidos");
+            alert.infoAlert("TicketIF", "Falha no Login", "Usuario ou Senha incorretos");
         }
-
-        Window c = new Window();
-        c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/tab.css", "TicketIF", true, StageStyle.DECORATED, false);
-        stage = (Stage) lbFechar.getScene().getWindow();
-        stage.close();
-        System.out.println("Usuario:Logado mas não Conectado");
 
     }
 }

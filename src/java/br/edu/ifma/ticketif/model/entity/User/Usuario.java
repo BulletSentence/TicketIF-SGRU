@@ -9,7 +9,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @Table (name = "TB_USUARIO")
 public class Usuario implements Serializable{
@@ -22,7 +22,7 @@ public class Usuario implements Serializable{
     @Column (name = "US_NOME")
     private String nome;
     
-    @Column (name = "US_LOGIN")
+    @Column (name = "US_LOGIN", unique = true)
     private String login;
     
     @Column (name = "US_SENHA")
