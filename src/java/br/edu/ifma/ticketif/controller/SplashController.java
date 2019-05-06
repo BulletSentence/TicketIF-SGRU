@@ -55,11 +55,8 @@ public class SplashController implements Initializable {
     private JFXSpinner loading;
 
     Alerts alert = new Alerts();
-
     Stage stage;
-
     Service<List<Usuario>> service;
-
     protected List<Usuario> listaUsuarios;
 
     @Override
@@ -75,12 +72,11 @@ public class SplashController implements Initializable {
                         System.exit(0);
                     }
                 });
-
             }
         });
+
         startApp();
         lbInfo.setText("Carregando...");
-        // TODO
     }
 
     public void startApp() {
@@ -93,20 +89,16 @@ public class SplashController implements Initializable {
                     protected List<Usuario> call() throws Exception {
 
                         Usuario user = new Usuario();
-                        user.setNome("Usuario Padrão");
-                        user.setLogin("");
-                        user.setSenha("");
+                        UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-                       UsuarioDAO usuarioDAO = new UsuarioDAO();
-                       try {
-                           usuarioDAO.atualizar(user);
-                           usuarioDAO.inserir(user);
-                       }catch (Exception e){
-                           System.out.println("Usuario padrão");
-                       }
+//                        user.setNome("Usuario Padrão");
+//                        user.setLogin("");
+//                        user.setSenha("");
+//
+//                        usuarioDAO.atualizar(user);
+//                        usuarioDAO.inserir(user);
+
                         return usuarioDAO.obterLista();
-
-
                     }
                 };
             }
@@ -199,8 +191,11 @@ public class SplashController implements Initializable {
             stage = (Stage) lbFechar.getScene().getWindow();
             stage.close();
         } else {
-            alert.infoAlert("TicketIF", "Falha no Login", "Usuario ou Senha incorretos");
+           // alert.infoAlert("TicketIF", "Falha no Login", "Usuario ou Senha incorretos");
         }
-
+        Window c = new Window();
+        c.newSplash(stage, lbFechar, "/fxml/Home.fxml", "/styles/tab.css", "TicketIF", true, StageStyle.DECORATED, false);
+        stage = (Stage) lbFechar.getScene().getWindow();
+        stage.close();
     }
 }
