@@ -55,9 +55,11 @@ public class Aluno implements Serializable {
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name="AUTORIZACAO")
+
     public Autorizacao getAutorizacao() {
         return autorizacao;
     }
+
     public void setAutorizacao(Autorizacao autorizacao) {
         this.autorizacao = autorizacao;
     }
