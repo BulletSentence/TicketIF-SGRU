@@ -9,6 +9,9 @@ import java.sql.Date;
 @Table (name = "DB_ALUNO")
 public class Aluno implements Serializable {
 
+    @SuppressWarnings("JpaAttributeTypeInspection")
+    private Autorizacao autorizacao;
+
     @Column(name = "AL_ID")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +20,10 @@ public class Aluno implements Serializable {
     @Column(name = "AL_NOME")
     private String nome;
 
-    @Column(name = "AL_CPF")
+    @Column(name = "AL_CPF", unique = true)
     private String cpf;
 
-    @Column(name = "AL_MATRICULA")
+    @Column(name = "AL_MATRICULA", unique = true)
     private String matricula;
 
     @Column(name = "AL_FONE")
@@ -50,6 +53,15 @@ public class Aluno implements Serializable {
     @Column(name = "AL_ANO_SAIDA")
     private Integer anoSaida;
 
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name="AUTORIZACAO")
+    public Autorizacao getAutorizacao() {
+        return autorizacao;
+    }
+    public void setAutorizacao(Autorizacao autorizacao) {
+        this.autorizacao = autorizacao;
+    }
+
     public Aluno(String nome, String matricula, String curso) {
         this.nome = nome;
         this.matricula = matricula;
@@ -58,6 +70,23 @@ public class Aluno implements Serializable {
 
     public Aluno() {
 
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Aluno outroAluno = (Aluno) obj;
+        if (id == null) {
+            if (outroAluno.id != null)
+                return false;
+        } else if (!id.equals(outroAluno.id))
+            return false;
+        return true;
     }
 
     public String getEmail() {

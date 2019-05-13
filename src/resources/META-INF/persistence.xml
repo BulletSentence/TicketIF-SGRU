@@ -6,26 +6,26 @@
     <persistence-unit name="PersistenciaDAO" transaction-type="RESOURCE_LOCAL">
    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>br.edu.ifma.ticketif.model.entity.database.Aluno</class>
+        <class>br.edu.ifma.ticketif.model.entity.database.Autorizacao</class>
         <class>br.edu.ifma.ticketif.model.entity.User.Usuario</class>
     <properties>
 
       <!--  propriedades do servidor -->
         <property name="javax.persistence.jdbc.url"
-                  value="jdbc:mysql://localhost:3306/ServerTicketif
-                  ?useTimezone=true&amp;
+                  value="jdbc:postgresql://localhost:5432/pgTicketif?useTimezone=true&amp;
                   serverTimezone=UTC&amp;
                   useSSL=false&amp;
                   createDatabaseIfNotExist=true"/>
 
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="admin"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
       <property name="hbm2ddl.auto" value="create"/>
 
       <!--  propriedades da hibernate -->
       <property name="hibernate.dialect"
-                value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+                value="org.hibernate.dialect.PostgreSQLDialect"/>
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
       <property name="hibernate.use_sql_comments" value="false" />

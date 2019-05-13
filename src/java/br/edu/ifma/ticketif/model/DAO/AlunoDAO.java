@@ -41,7 +41,7 @@ public class AlunoDAO {
     }
 
     public boolean inserirAluno(Aluno aluno) {
-        //TODO
+
         //verificação se o usuario já está cadastrado
 
 //        if (this.alunoExistente(aluno)) {
@@ -63,9 +63,10 @@ public class AlunoDAO {
 
     public boolean alunoExistente(Aluno aluno) {
         try {
-            aluno = (Aluno) entidadeGerenciamento.createQuery("SELECT u FROM Aluno u WHERE u.nome LIKE :nome").setParameter("nome", "%" + aluno.getNome() + "%").getSingleResult();
+            aluno = (Aluno) entidadeGerenciamento.createQuery("SELECT u FROM Aluno u WHERE u.nome LIKE : nome")
+                    .setParameter("nome", "%" + aluno.getNome() + "%").getSingleResult();
             return true; // Se encontrou registro, então OK!
-        } catch (NoResultException ex) {
+        } catch (Exception ex) {
             return false; // Caso não exista registro
         }
     }
