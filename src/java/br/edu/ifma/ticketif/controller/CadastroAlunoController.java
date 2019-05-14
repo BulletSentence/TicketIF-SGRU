@@ -21,6 +21,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.eclipse.persistence.queries.InsertObjectQuery;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -147,7 +148,7 @@ public class CadastroAlunoController implements Initializable {
             aluno.setDataNasc(sqlDate);
 
         }catch(Exception e){
-            e.printStackTrace();
+            alert.infoAlert("TicketIF", "Aluno já cadastrado", "Deus é fiel");
         }
 
         String cpf = aluno_cpf.getText();
@@ -247,9 +248,6 @@ public class CadastroAlunoController implements Initializable {
     @FXML
     private void salvarExelParaTabela(){
 
-        //TODO
-        // Verificação no banco de dados se há um registro igual
-
         int indice = 0;
         int tamanhoTabela = colunaNome.getTableView().getItems().size();
         System.out.println(tamanhoTabela);
@@ -263,8 +261,11 @@ public class CadastroAlunoController implements Initializable {
               aluno.setNome(colunaNome.getCellData(indice));
               aluno.setMatricula(colunaMatricula.getCellData(indice));
               aluno.setCurso(colunaCurso.getCellData(indice));
-
-              alunoDAO.inserirAluno(aluno);
+            try {
+                alunoDAO.inserirAluno(aluno);
+            }catch (Exception e){
+                alert.infoAlert("TicketIF", "Aluno " + aluno.getNome() + " existente", " ");
+            }
               indice++;
 
           }catch (Exception e){

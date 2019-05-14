@@ -8,6 +8,7 @@
         <class>br.edu.ifma.ticketif.model.entity.database.Aluno</class>
         <class>br.edu.ifma.ticketif.model.entity.database.Refeicao</class>
         <class>br.edu.ifma.ticketif.model.entity.database.Autorizacao</class>
+        <class>br.edu.ifma.ticketif.model.entity.database.Registro</class>
         <class>br.edu.ifma.ticketif.model.entity.User.Usuario</class>
     <properties>
 
