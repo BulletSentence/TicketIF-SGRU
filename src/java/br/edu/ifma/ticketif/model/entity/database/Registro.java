@@ -27,6 +27,8 @@ public class Registro implements Serializable {
     @Column(name = "RE_DIA_SEMANA", nullable = true)
     private String diaSemana;
 
+    @Column(name = "RE")
+
     public Long getId() {
         return id;
     }

@@ -27,7 +27,6 @@ public class Alerts {
             return true;
         } else {
             return false;
-            // ... user chose CANCEL or closed the dialog
         }
     }
 
