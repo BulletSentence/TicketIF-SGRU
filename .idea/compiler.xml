@@ -25,7 +25,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="SGRU" options="-bootclasspath &quot;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\resources.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\sunrsasign.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\jsse.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\jce.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\charsets.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\lib\jfr.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\jre64\classes;C:/Program Files/Java/jdk1.8.0_202/jre/lib/jfxrt.jar&quot;" />
+      <module name="SGRU" options="-bootclasspath $APPLICATION_HOME_DIR$/jre64/lib/resources.jar:$APPLICATION_HOME_DIR$/jre64/lib/rt.jar:$APPLICATION_HOME_DIR$/jre64/lib/sunrsasign.jar:$APPLICATION_HOME_DIR$/jre64/lib/jsse.jar:$APPLICATION_HOME_DIR$/jre64/lib/jce.jar:$APPLICATION_HOME_DIR$/jre64/lib/charsets.jar:$APPLICATION_HOME_DIR$/jre64/lib/jfr.jar:$APPLICATION_HOME_DIR$/jre64/classes:$APPLICATION_HOME_DIR$/jre64/lib/jfxrt.jar" />
     </option>
   </component>
 </project>
