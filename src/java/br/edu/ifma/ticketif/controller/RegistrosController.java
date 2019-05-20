@@ -65,10 +65,10 @@ public class RegistrosController implements Initializable {
 
     }
 
+
     public void buscarAluno(){
         AlunoDAO alunoDao = new AlunoDAO();
         ObservableList<Aluno> dadosTabelaBusca = FXCollections.observableArrayList();
-
 
         for (Aluno a : alunoDao.obterListaAluno()) {
 
@@ -76,7 +76,6 @@ public class RegistrosController implements Initializable {
                 dadosTabelaBusca.add(new Aluno(a.getNome(), a.getMatricula(), a.getCurso()));
 
             }
-
         }
 
         colunaNomeBusca.setCellValueFactory(new PropertyValueFactory<>("nome"));
