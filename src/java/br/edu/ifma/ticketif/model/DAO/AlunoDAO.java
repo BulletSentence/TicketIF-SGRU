@@ -28,11 +28,11 @@ public class AlunoDAO {
     }
 
 
-    public Aluno buscarAluno (String nome){
-        Aluno aluno = null;
+    public Aluno buscarAluno (Aluno aluno){
         try {
             entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
-            entidadeGerenciamento.find(Aluno.class, nome);
+            aluno = entidadeGerenciamento.find(Aluno.class, aluno.getId());
+            entidadeGerenciamento.getTransaction().commit();
         } catch (Exception ex) {
             ex.printStackTrace();
             entidadeGerenciamento.getTransaction().rollback();    //Desfaz alterações, em caso de err

@@ -74,6 +74,9 @@ public class Aluno implements Serializable {
 
     }
 
+    public Aluno(Long id){
+        this.id = id;
+    }
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -84,11 +87,8 @@ public class Aluno implements Serializable {
             return false;
         Aluno outroAluno = (Aluno) obj;
         if (id == null) {
-            if (outroAluno.id != null)
-                return false;
-        } else if (!id.equals(outroAluno.id))
-            return false;
-        return true;
+            return outroAluno.id == null;
+        } else return id.equals(outroAluno.id);
     }
 
     public String getEmail() {

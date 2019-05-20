@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <JFXTabPane prefHeight="609.0" prefWidth="744.0" stylesheets="@../styles/tab.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.RegistrosController">
     <tabs>
         <Tab text="Alunos Cadastrados">
@@ -45,16 +37,17 @@
          <content>
             <BorderPane prefWidth="744.0">
                <bottom>
-                  <VBox prefHeight="200.0" prefWidth="744.0" BorderPane.alignment="CENTER">
+                   <VBox prefHeight="415.0" prefWidth="744.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TableView fx:id="tabelaAlunos1" prefHeight="412.0" prefWidth="519.0" stylesheets="@../styles/tabela.css" VBox.vgrow="ALWAYS">
+                         <TableView fx:id="tabelaAlunosBusca" prefHeight="412.0" prefWidth="519.0"
+                                    stylesheets="@../styles/tabela.css" VBox.vgrow="ALWAYS">
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                            <columns>
-                              <TableColumn fx:id="colunaNomeSolicitacao" prefWidth="191.0" text="Nome" />
-                              <TableColumn fx:id="colunaMatriculaSolicitacao" prefWidth="150.0" text="Matrícula" />
-                              <TableColumn fx:id="colunaCursoSolicitacao" prefWidth="209.0" text="Curso" />
+                               <TableColumn fx:id="colunaNomeBusca" prefWidth="191.0" text="Nome"/>
+                               <TableColumn fx:id="colunaMatriculaBusca" prefWidth="150.0" text="Matrícula"/>
+                               <TableColumn fx:id="colunaCursoBusca" prefWidth="209.0" text="Curso"/>
                            </columns>
                            <VBox.margin>
                               <Insets bottom="50.0" left="50.0" right="50.0" top="10.0" />
@@ -64,7 +57,7 @@
                   </VBox>
                </bottom>
                <center>
-                  <GridPane BorderPane.alignment="CENTER">
+                   <GridPane prefHeight="291.0" prefWidth="744.0" BorderPane.alignment="CENTER">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -72,43 +65,19 @@
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <JFXTextField fx:id="solicitacaoNome" prefHeight="25.0" prefWidth="342.0" promptText="Nome">
-                           <GridPane.margin>
-                              <Insets left="45.0" right="20.0" />
-                           </GridPane.margin>
-                        </JFXTextField>
-                        <JFXComboBox fx:id="solicitacaoCurso" prefHeight="25.0" prefWidth="378.0" promptText="Curso" GridPane.columnIndex="1">
-                           <opaqueInsets>
-                              <Insets left="20.0" right="20.0" />
-                           </opaqueInsets>
-                           <GridPane.margin>
-                              <Insets left="20.0" right="45.0" />
-                           </GridPane.margin>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="solicitacaoTurma" prefHeight="25.0" prefWidth="378.0" promptText="Turma" GridPane.rowIndex="1">
-                           <opaqueInsets>
-                              <Insets left="20.0" right="20.0" />
-                           </opaqueInsets>
-                           <GridPane.margin>
-                              <Insets left="45.0" right="20.0" />
-                           </GridPane.margin>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="solicitacaoTipo" prefHeight="25.0" prefWidth="378.0" promptText="Tipo" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <opaqueInsets>
-                              <Insets left="20.0" right="20.0" />
-                           </opaqueInsets>
-                           <GridPane.margin>
-                              <Insets left="20.0" right="45.0" />
-                           </GridPane.margin>
-                        </JFXComboBox>
-                        <JFXButton fx:id="btn_buscarSolicitacao" alignment="CENTER" style="-fx-border-color: #c0c0c0;" text="Buscar Aluno" GridPane.rowIndex="2">
+                         <JFXButton fx:id="btn_buscarSolicitacao" alignment="CENTER" onAction="#buscarAluno"
+                                    style="-fx-border-color: #c0c0c0;" text="Buscar Aluno" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="50.0" />
                            </GridPane.margin>
                         </JFXButton>
+                         <JFXTextField fx:id="textf_matricula" promptText="Matricula">
+                             <padding>
+                                 <Insets left="50.0" right="50.0"/>
+                             </padding>
+                         </JFXTextField>
                      </children>
                   </GridPane>
                </center>
