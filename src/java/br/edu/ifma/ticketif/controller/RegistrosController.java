@@ -1,7 +1,9 @@
 package br.edu.ifma.ticketif.controller;
 
 import br.edu.ifma.ticketif.model.DAO.AlunoDAO;
+import br.edu.ifma.ticketif.model.DAO.AutorizacaoDAO;
 import br.edu.ifma.ticketif.model.entity.database.Aluno;
+import br.edu.ifma.ticketif.model.entity.database.Autorizacao;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
@@ -16,6 +18,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.persistence.EntityManager;
+import java.math.BigInteger;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
@@ -104,5 +108,60 @@ public class RegistrosController implements Initializable {
         tabelaAlunosBusca.setItems(dadosTabelaBusca);
 
     }
+
+    public void AutorizarAluno(){
+
+        AlunoDAO alunoDAO = new AlunoDAO();
+        Autorizacao autorizacao = new Autorizacao();
+        AutorizacaoDAO autorizacaoDAO = new AutorizacaoDAO();
+
+        for (Aluno a : alunoDAO.obterListaAluno()) {
+            if(textf_matricula.getText().toUpperCase().equals(alunoDAO.buscarAluno(a).getMatricula())){
+
+                if (checkbox_domingo.isSelected()){
+                    autorizacao.setDom(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                if (checkbox_segunda.isSelected()) {
+                    autorizacao.setSeg(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                if (checkbox_terca.isSelected()) {
+                    autorizacao.setTer(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                if (checkbox_quarta.isSelected()) {
+                    autorizacao.setQua(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                if (checkbox_quinta.isSelected()) {
+                    autorizacao.setQui(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                if (checkbox_sexta.isSelected()){
+                    autorizacao.setSex(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                if (checkbox_sabado.isSelected()){
+                    autorizacao.setSab(true);
+                    autorizacaoDAO.atualizarAutorizacao(autorizacao);
+                }
+
+                a.setAutorizacao(autorizacao);
+                alunoDAO.atualizarAluno(a);
+                //autorizacaoDAO.limparCache();
+
+            }
+        }
+
+
+    }
+
 
 }

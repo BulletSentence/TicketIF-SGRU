@@ -72,8 +72,7 @@ public class HomeController implements Initializable {
 
         }
 
-        btnCadastrar();
-
+        btnRegistro();
     }
 
     @FXML

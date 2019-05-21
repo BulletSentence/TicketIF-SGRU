@@ -2,55 +2,54 @@ package br.edu.ifma.ticketif.model.DAO;
 
 import br.edu.ifma.ticketif.core.EntityManagerSource;
 import br.edu.ifma.ticketif.model.entity.database.Aluno;
+import br.edu.ifma.ticketif.model.entity.database.Autorizacao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class AlunoDAO {
+public class AutorizacaoDAO {
 
     private EntityManager entidadeGerenciamento;
-    public AlunoDAO(){
+    public AutorizacaoDAO(){
         this.entidadeGerenciamento = EntityManagerSource.getEntityManager();
     }
 
-    public Aluno getByCod(Long codAluno) {
-        return entidadeGerenciamento.find(Aluno.class, codAluno);
+    public Autorizacao getByCod(int codAutorizacao) {
+        return entidadeGerenciamento.find(Autorizacao.class, codAutorizacao);
     }
 
-    public List<Aluno> obterListaAluno() {
+    public List<Autorizacao> obterListaAluno() {
 
         entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
-        List<Aluno> listaAluno = entidadeGerenciamento.createQuery("select u from Aluno u", Aluno.class).getResultList();
+        List<Autorizacao> listaAutorizacao = entidadeGerenciamento.createQuery("select u from Autorizacao u", Autorizacao.class).getResultList();
         entidadeGerenciamento.getTransaction().commit();
-        return listaAluno;
+        return listaAutorizacao;
+    }
+
+    public Boolean limparCache(){
+        entidadeGerenciamento.createQuery("delete from db_autorizacao where au_id != (select autorizacao from db_aluno)").getResultList();
+        return true;
     }
 
 
-    public Aluno buscarAluno (Aluno aluno){
+    public Autorizacao buscarAutorizacao (Autorizacao autorizacao){
         try {
             entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
-            aluno = entidadeGerenciamento.find(Aluno.class, aluno.getId());
+            autorizacao = entidadeGerenciamento.find(Autorizacao.class, autorizacao.getId());
             entidadeGerenciamento.getTransaction().commit();
         } catch (Exception ex) {
             ex.printStackTrace();
             entidadeGerenciamento.getTransaction().rollback();    //Desfaz alterações, em caso de err
         }
-        return aluno;
+        return autorizacao;
     }
 
-    public boolean inserirAluno(Aluno aluno) {
-
-        //verificação se o usuario já está cadastrado
-
-//        if (this.alunoExistente(aluno)) {
-//            return false;
-//        }
+    public boolean inserirAutorizacao(Autorizacao autorizacao) {
 
         try {
             entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
-            entidadeGerenciamento.persist(aluno);
+            entidadeGerenciamento.persist(autorizacao);
             entidadeGerenciamento.getTransaction().commit();  //Encerra a negociação da persistencia
             return true;
 
@@ -61,21 +60,11 @@ public class AlunoDAO {
         }
     }
 
-    public boolean alunoExistente(Aluno aluno) {
-        try {
-            aluno = (Aluno) entidadeGerenciamento.createQuery("SELECT u FROM Aluno u WHERE u.nome LIKE : nome")
-                    .setParameter("nome", "%" + aluno.getNome() + "%").getSingleResult();
-            return true; // Se encontrou registro, então OK!
-        } catch (Exception ex) {
-            return false; // Caso não exista registro
-        }
-    }
 
-    public boolean atualizarAluno(Aluno aluno) {
+    public boolean atualizarAutorizacao(Autorizacao autorizacao) {
         try {
             entidadeGerenciamento.getTransaction().begin();   //Inicia a negociação da persistencia
-
-            entidadeGerenciamento.merge(aluno);
+            entidadeGerenciamento.merge(autorizacao);
             entidadeGerenciamento.getTransaction().commit();  //Encerra a negociação da persistencia
             return true;
         } catch (Exception ex) {
@@ -85,11 +74,11 @@ public class AlunoDAO {
         }
     }
 
-    public boolean removerAluno(Aluno aluno) {
+    public boolean removerAutorizacao(Autorizacao autorizacao) {
         try {
             entidadeGerenciamento.getTransaction().begin();
-            aluno = entidadeGerenciamento.find(Aluno.class, aluno.getId());
-            entidadeGerenciamento.remove(aluno);
+            autorizacao = entidadeGerenciamento.find(Autorizacao.class, autorizacao.getId());
+            entidadeGerenciamento.remove(autorizacao);
             entidadeGerenciamento.getTransaction().commit();
             return true;
         } catch (Exception ex) {

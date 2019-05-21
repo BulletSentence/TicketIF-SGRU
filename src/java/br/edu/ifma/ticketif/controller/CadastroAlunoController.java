@@ -16,6 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -203,6 +204,7 @@ public class CadastroAlunoController implements Initializable {
             }
         }
 
+
         return alunoDAO.obterListaAluno();
     }
 
@@ -220,13 +222,24 @@ public class CadastroAlunoController implements Initializable {
             Iterator<Row> rowIterator = sheet.iterator();
 
             while (rowIterator.hasNext()) {
+
+
                 Row row = rowIterator.next();
                 Iterator<Cell> cellIterator = row.cellIterator();
 
+                if (row.getRowNum() < 1){
+                    continue;
+                }
+
                 int count = 0;
+
                 while (cellIterator.hasNext()) {
                     Cell cell = cellIterator.next();
                     System.out.println(cell.toString());
+
+                    if (cell.toString().equals(""))
+                        continue;
+
                     dados.add(count, cell.toString());
                     count++;
                 }
@@ -275,6 +288,7 @@ public class CadastroAlunoController implements Initializable {
 
     }
 }
+
 
 
 

@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
-<?import com.jfoenix.controls.JFXTabPane?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-
-<JFXTabPane prefHeight="609.0" prefWidth="744.0" stylesheets="@../styles/tab.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.RegistrosController">
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<JFXTabPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="609.0" prefWidth="744.0" stylesheets="@../styles/tab.css"
+            xmlns="http://javafx.com/javafx/8.0.172-ea"
+            fx:controller="br.edu.ifma.ticketif.controller.RegistrosController">
     <tabs>
         <Tab text="Alunos Cadastrados">
             <content>
@@ -43,7 +33,7 @@
                 </BorderPane>
             </content>
         </Tab>
-      <Tab text="Solicitação">
+        <Tab fx:id="btn_cadastrar" text="Solicitação">
          <content>
             <BorderPane prefWidth="744.0">
                <bottom>
@@ -136,7 +126,9 @@
                                     <Insets right="30.0" />
                                  </GridPane.margin>
                               </JFXCheckBox>
-                              <JFXButton fx:id="btn_cadastroSolicitacao" style="-fx-background-color: #c0c0c0;" text="Cadastrar Solicitação" GridPane.rowIndex="2">
+                               <JFXButton fx:id="btn_cadastroSolicitacao" onAction="#AutorizarAluno"
+                                          style="-fx-background-color: #c0c0c0;" text="Cadastrar Solicitação"
+                                          GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="30.0" />
                                  </GridPane.margin>
