@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SGRU" target="8" />
+      <module name="SGRU" target="" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

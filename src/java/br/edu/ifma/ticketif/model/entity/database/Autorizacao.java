@@ -39,6 +39,9 @@ public class Autorizacao implements Serializable {
     @Column(name = "AU_DATA")
     private Date data;
 
+    @OneToOne(mappedBy = "autorizacao")
+    private Aluno aluno;
+
     public Boolean getDom() {
         return dom;
     }

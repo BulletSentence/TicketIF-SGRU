@@ -10,8 +10,6 @@ import java.sql.Date;
 public class Aluno implements Serializable {
 
     @SuppressWarnings("JpaAttributeTypeInspection")
-    private Autorizacao autorizacao;
-
     @Column(name = "AL_ID")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,8 +51,9 @@ public class Aluno implements Serializable {
     @Column(name = "AL_ANO_SAIDA")
     private Integer anoSaida;
 
-    @ManyToOne (fetch = FetchType.LAZY)
+    @OneToOne (fetch = FetchType.LAZY)
     @JoinColumn(name="AUTORIZACAO")
+    private Autorizacao autorizacao;
 
     public Autorizacao getAutorizacao() {
         return autorizacao;

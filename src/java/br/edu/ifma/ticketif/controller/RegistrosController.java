@@ -3,6 +3,7 @@ package br.edu.ifma.ticketif.controller;
 import br.edu.ifma.ticketif.model.DAO.AlunoDAO;
 import br.edu.ifma.ticketif.model.entity.database.Aluno;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,10 +31,8 @@ public class RegistrosController implements Initializable {
     private TableColumn<Aluno, String> colunaMatricula;
     @FXML
     private TableColumn<Aluno, String> colunaCurso;
-
     @FXML
     private JFXTextField textf_matricula;
-
     @FXML
     private TableView<Aluno> tabelaAlunosBusca;
     @FXML
@@ -42,12 +41,33 @@ public class RegistrosController implements Initializable {
     private TableColumn<?, ?> colunaMatriculaBusca;
     @FXML
     private TableColumn<?, ?> colunaCursoBusca;
+    @FXML
+    private JFXCheckBox checkbox_jantar;
+    @FXML
+    private JFXCheckBox checkbox_segunda;
+    @FXML
+    private JFXCheckBox checkbox_almoco;
+    @FXML
+    private JFXCheckBox checkbox_ceia;
+    @FXML
+    private JFXCheckBox checkbox_terca;
+    @FXML
+    private JFXCheckBox checkbox_quarta;
+    @FXML
+    private JFXCheckBox checkbox_quinta;
+    @FXML
+    private JFXCheckBox checkbox_sexta;
+    @FXML
+    private JFXCheckBox checkbox_sabado;
+    @FXML
+    private JFXCheckBox checkbox_domingo;
+    @FXML
+    private JFXButton btn_cadastroSolicitacao;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         atualizaTabela();
     }
-
 
     private void atualizaTabela() {
         AlunoDAO aluno = new AlunoDAO();

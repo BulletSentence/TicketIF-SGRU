@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
 <JFXTabPane prefHeight="609.0" prefWidth="744.0" stylesheets="@../styles/tab.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.RegistrosController">
     <tabs>
         <Tab text="Alunos Cadastrados">
@@ -39,20 +49,100 @@
                <bottom>
                    <VBox prefHeight="415.0" prefWidth="744.0" BorderPane.alignment="CENTER">
                      <children>
-                         <TableView fx:id="tabelaAlunosBusca" prefHeight="412.0" prefWidth="519.0"
-                                    stylesheets="@../styles/tabela.css" VBox.vgrow="ALWAYS">
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy>
-                           <columns>
-                               <TableColumn fx:id="colunaNomeBusca" prefWidth="191.0" text="Nome"/>
-                               <TableColumn fx:id="colunaMatriculaBusca" prefWidth="150.0" text="Matrícula"/>
-                               <TableColumn fx:id="colunaCursoBusca" prefWidth="209.0" text="Curso"/>
-                           </columns>
+                        <AnchorPane prefHeight="113.0" prefWidth="744.0">
+                           <children>
+                               <TableView fx:id="tabelaAlunosBusca" layoutX="34.0" prefHeight="109.0" prefWidth="674.0" stylesheets="@../styles/tabela.css">
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <columns>
+                                     <TableColumn fx:id="colunaNomeBusca" prefWidth="191.0" text="Nome" />
+                                     <TableColumn fx:id="colunaMatriculaBusca" prefWidth="150.0" text="Matrícula" />
+                                     <TableColumn fx:id="colunaCursoBusca" prefWidth="222.0" text="Curso" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
                            <VBox.margin>
-                              <Insets bottom="50.0" left="50.0" right="50.0" top="10.0" />
+                              <Insets />
                            </VBox.margin>
-                        </TableView>
+                        </AnchorPane>
+                        <GridPane prefHeight="304.0" prefWidth="744.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXCheckBox fx:id="checkbox_jantar" text="Jantar" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_segunda" text="Segunda" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <Label text="Dias da Semana" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets top="50.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Refeições" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets top="50.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <JFXCheckBox fx:id="checkbox_almoco" text="Almoço" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_ceia" text="Ceia" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_terca" text="Terça" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_quarta" text="Quarta" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_quinta" text="Quinta" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_sexta" text="Sexta" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <JFXCheckBox fx:id="checkbox_sabado" text="Sabado" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <GridPane.margin>
+                                    <Insets left="11.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="checkbox_domingo" text="Domingo" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets right="30.0" />
+                                 </GridPane.margin>
+                              </JFXCheckBox>
+                              <JFXButton fx:id="btn_cadastroSolicitacao" style="-fx-background-color: #c0c0c0;" text="Cadastrar Solicitação" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
                      </children>
                   </VBox>
                </bottom>
@@ -64,18 +154,16 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                         <JFXButton fx:id="btn_buscarSolicitacao" alignment="CENTER" onAction="#buscarAluno"
-                                    style="-fx-border-color: #c0c0c0;" text="Buscar Aluno" GridPane.rowIndex="1">
+                         <JFXButton fx:id="btn_buscarSolicitacao" alignment="CENTER" onAction="#buscarAluno" style="-fx-background-color: #c0c0c0;" text="Buscar Aluno" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="50.0" />
                            </GridPane.margin>
                         </JFXButton>
-                         <JFXTextField fx:id="textf_matricula" promptText="Matricula">
+                         <JFXTextField fx:id="textf_matricula" prefHeight="29.0" prefWidth="372.0" promptText="Matricula">
                              <padding>
-                                 <Insets left="50.0" right="50.0"/>
+                                 <Insets left="30.0" right="30.0" />
                              </padding>
                          </JFXTextField>
                      </children>
