@@ -24,9 +24,15 @@
                                         <TableColumn fx:id="colunaCurso" prefWidth="209.0" text="Curso" />
                                     </columns>
                                     <VBox.margin>
-                                        <Insets bottom="50.0" left="50.0" right="50.0" top="10.0" />
+                                        <Insets bottom="20.0" left="50.0" right="50.0" top="10.0"/>
                                     </VBox.margin>
                                 </TableView>
+                                <JFXButton mnemonicParsing="false" onAction="#btnCadastrarALuno" text="Cadastrar Aluno"
+                                           textFill="#0f0f22" VBox.vgrow="ALWAYS">
+                                    <VBox.margin>
+                                        <Insets bottom="50.0" left="50.0"/>
+                                    </VBox.margin>
+                                </JFXButton>
                             </children>
                         </VBox>
                     </center>
