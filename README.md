@@ -1,4 +1,4 @@
-# SGRU
+# SGRU (Sistema de Gerenciamento do Restaurante Universitário)
 Sistema Gerenciador de Tickets em JAVA
 
 Este trabalho visa otimizar o controle de gestão do Restaurante, gerar melhor eficiência e reduzir custos para a instituição, além de diminuir a quantidade de alimentos desperdiçados durante as refeições. A redução de custos está diretamente ligada consolidação de um sistema de avaliação da quantidade de pessoas que solicitaram a refeição no dia. Estes dados serão a base para a quantidade de alimento produzido no dia, evitando o desperdício pela produção em quantia correspondente à demanda.
