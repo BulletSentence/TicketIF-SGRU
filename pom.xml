@@ -54,12 +54,6 @@
             <version>2.5.2</version>
         </dependency>
         
-         <dependency>
-            <groupId>br.edu.ifma</groupId>
-            <artifactId>TicketIF</artifactId>
-            <version>0.1.7</version>
-        </dependency>
-
         <dependency>
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
