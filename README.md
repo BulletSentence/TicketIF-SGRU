@@ -11,6 +11,12 @@
 
 * As a result, there is a great demand for food requests on a daily basis, which varies according to the performance of campus activities. Currently, all of these requests are processed manually, which leads to inefficiency, slowness and errors. Therefore, the development of the system proposed in this research will contribute significantly to improve and optimize the entire food requisition and production chain at IFMA-Campus Caxias.
 
+## Screenshots
+
+![SPA](https://user-images.githubusercontent.com/37451620/84416053-10286080-abea-11ea-911f-b42d563c2578.PNG)
+![Capturar](https://user-images.githubusercontent.com/37451620/84416058-11f22400-abea-11ea-81d9-d4397d0f9340.PNG)
+
+
 ## Tools Used:
 
 * JavaFX 11
