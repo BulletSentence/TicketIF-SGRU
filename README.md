@@ -1,13 +1,13 @@
 # SGRU (Sistema de Gerenciamento do Restaurante Universitário)
 Sistema Gerenciador de Tickets em JAVA
 
-Este trabalho visa otimizar o controle de gestão do Restaurante, gerar melhor eficiência e reduzir custos para a instituição, além de diminuir a quantidade de alimentos desperdiçados durante as refeições. A redução de custos está diretamente ligada consolidação de um sistema de avaliação da quantidade de pessoas que solicitaram a refeição no dia. Estes dados serão a base para a quantidade de alimento produzido no dia, evitando o desperdício pela produção em quantia correspondente à demanda.
+This work aims to optimize management control restaurant, generate better efficiency and lower costs for the institution, as well as decrease the amount of food wasted during meals. Cost reduction is directly linked to the consolidation of a system for assessing the number of people who ordered a meal that day. These data will be the basis for the amount of food produced in the day, avoiding waste due to production in an amount corresponding to the demand.
 
-	As vantagens desse sistema vão além da redução do desperdício, pois também será possível utilizar os resultados e relatórios de forma a otimizar toda a cadeia de processamento e distribuição alimentícia do campus, como saber os dias mais movimentados, quando será necessário produzir mais ou menos alimentação, além de diminuir o tempo para a solicitação de tickets do restaurante universitário.
-	
-	Com base nesta proposta, a comunicação entre o restaurante e a gestão deve ser realizada inteiramente pelo sistema utilizando conexão com a Internet, eliminando a necessidade de entrega de relatórios pessoalmente e também melhorando a fidelidade e confiabilidade das amostras, já que o processo será inteiramente realizado, processado e validado pelo próprio sistema.
-	
-	Atualmente o IFMA-Campus Caxias conta com aproximadamente 2.000 alunos matriculados e mais de 100 servidores, que frequentam o campus nos turnos matutino, vespertino e noturno, o que demanda a produção diária de café-da-manhã, almoço e jantar. Além disso, o IFMA-Campus Caxias conta com alojamento para alunos residentes, que recebem alimentação em três turnos durante todo o ano escolar.
-	
-	Em consequência, existe uma grande demanda de solicitação de alimentação diariamente, e que varia conforme a realização de atividades do campus. Atualmente, todas estas solicitações são processadas manualmente, o que acarreta ineficiência, lentidão e erros. Portanto, o desenvolvimento do sistema proposto neste pesquisa irá contribuir significativamente para aprimorar e otimizar toda a cadeia de requisição e produção alimentícia do IFMA-Campus Caxias.
+The advantages of this system go beyond the reduction of waste because you can also use the results and reports to optimize the entire process chain and food campus distribution, how to know the busiest days, when it will be necessary to produce more or less power , in addition to reducing the time for ordering tickets for the university restaurant.
+
+Based on this proposal, communication between the restaurant and the management must be carried out entirely by the system using an Internet connection, eliminating the need to deliver reports in person and also improving the fidelity and reliability of the samples, since the process will be entirely carried out processed and validated by the system itself.
+
+Currently, IFMA-Campus Caxias has approximately 2,000 students enrolled and more than 100 civil servants, who attend the campus in the morning, afternoon and evening shifts, which requires the daily production of breakfast, lunch and dinner. In addition, IFMA-Campus Caxias has accommodation for resident students, who receive food in three shifts throughout the school year.
+
+As a result, there is a great demand for food requests on a daily basis, which varies according to the performance of campus activities. Currently, all of these requests are processed manually, which leads to inefficiency, slowness and errors. Therefore, the development of the system proposed in this research will contribute significantly to improve and optimize the entire food requisition and production chain at IFMA-Campus Caxias.
 
