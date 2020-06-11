@@ -19,7 +19,8 @@
 
 ## Tools Used:
 
-* JavaFX 11
+* JavaFX 8
 * FXML
 * Maven
 * MySQL 
+
