@@ -1,6 +1,7 @@
 # SGRU (Sistema de Gerenciamento do Restaurante Universitário)
 ## Sistema Gerenciador de Tickets em JAVA
 
+
 * This work aims to optimize management control restaurant, generate better efficiency and lower costs for the institution, as well as decrease the amount of food wasted during meals. Cost reduction is directly linked to the consolidation of a system for assessing the number of people who ordered a meal that day. These data will be the basis for the amount of food produced in the day, avoiding waste due to production in an amount corresponding to the demand.
 
 * The advantages of this system go beyond the reduction of waste because you can also use the results and reports to optimize the entire process chain and food campus distribution, how to know the busiest days, when it will be necessary to produce more or less power , in addition to reducing the time for ordering tickets for the university restaurant.
