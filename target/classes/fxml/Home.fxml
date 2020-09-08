@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="telaHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifma.ticketif.controller.HomeController">
+   <top>
+       <HBox style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+             <Label alignment="CENTER" prefHeight="56.0" prefWidth="176.0" style="-fx-background-color: #263238;" text="TicketIF" textFill="WHITE">
+                 <font>
+                     <Font name="Arial Bold" size="27.0" />
+                 </font>
+             </Label>
+             <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="493.0" style="-fx-background-color: #263238;" HBox.hgrow="ALWAYS">
+               <children>
+                   <Label text=" Leonardo Viana Oliveira" textFill="WHITE">
+                       <graphic>
+                           <Circle fill="#31c364" radius="4.0" stroke="#31c364" strokeType="INSIDE" />
+                       </graphic>
+                       <HBox.margin>
+                           <Insets right="3.0" />
+                       </HBox.margin>
+                     <font>
+                         <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                   <JFXButton prefHeight="25.0" prefWidth="45.0" style="-fx-background-color: #212121; -fx-background-radius: 10;" text="Sair" textFill="WHITE">
+                       <HBox.margin>
+                           <Insets left="10.0" right="20.0" />
+                       </HBox.margin>
+                   </JFXButton>
+               </children>
+            </HBox>
+         </children>
+       </HBox>
+   </top>
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <VBox fx:id="drawer" alignment="TOP_CENTER" prefHeight="544.0" prefWidth="176.0" style="-fx-background-color: #212121;" VBox.vgrow="ALWAYS">
+                    <children>
+                        <JFXButton onAction="#btnCadastrar" prefHeight="70.0" prefWidth="185.0" style="-fx-background-color: #212121; -fx-border-radius: 3em;" text="Cadastrar" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton onAction="#btnRegistro" prefHeight="70.0" prefWidth="185.0" text="Registros" textFill="WHITE" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="70.0" prefWidth="185.0" text="Relatórios" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="70.0" prefWidth="185.0" text="Imprimir" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </JFXButton>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="226.0" prefWidth="176.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="label_dataatual" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="129.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="diasemana" alignment="CENTER" textFill="WHITE" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>

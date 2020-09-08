@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Ago 17, 2018
+    Author     : Gerson Guimarães
+*/
+
+/*******************************************************************************
+ *                                                                             *
+ * Splash                                                              *
+ *                                                                             *d
+ ******************************************************************************/
+.bg-splash {
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image: url("../assets/img/splash.png");
+    -fx-background-repeat:no-repeat;
+
+}
+
